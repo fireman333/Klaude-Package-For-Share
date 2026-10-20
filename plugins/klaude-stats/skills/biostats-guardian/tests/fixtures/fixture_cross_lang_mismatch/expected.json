@@ -1,0 +1,20 @@
+{
+  "role": "results",
+  "skill": "univariate-forest",
+  "step_id": "uni_os",
+  "min_status": "block",
+  "must_include": [
+    {
+      "check_id": "RES-014",
+      "severity": "block",
+      "explanation": "Cross-language repro shows main R HR=0.62 vs Python lifelines HR=0.93 (rel_diff=50%, threshold 5%). Events=180 and N=520 match between languages, ruling out sample-split bug. Most likely cause: reference level mismatch or covariate coding drift between the R script and the cleansed CSV that Python sees."
+    }
+  ],
+  "may_include": [
+    {
+      "check_id": "RES-014",
+      "severity": "warn",
+      "explanation": "Optional: if subagent inspects the R script and detects `factor(treatment_arm, levels=c('B','A'))` vs Python default alphabetical, it may surface a secondary warn explaining the reference-level discrepancy as the suspected root cause."
+    }
+  ]
+}

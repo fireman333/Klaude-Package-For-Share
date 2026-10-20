@@ -1,0 +1,24 @@
+{
+  "_comment_mode": "'direct' = you are on your institution's VPN/proxy (institutional IP). 'prefix' = library login-URL prefix (set proxy_prefix). 'ezproxy' = host-rewriting EZproxy (set proxy_host_suffix). Leave everything blank for open-access-only use.",
+  "mode": "direct",
+
+  "_comment_prefix": "Library login-URL prefix; the DOI landing URL is appended. Example shape: https://<your-library-proxy>/login?url=",
+  "proxy_prefix": "",
+
+  "_comment_ezproxy": "Only for host-rewriting EZproxy. Suffix without leading dot, e.g. ezproxy.lib.your-university.edu",
+  "proxy_host_suffix": "",
+  "proxy_port": null,
+
+  "_comment_cookies": "Netscape-format cookies.txt exported from your logged-in browser (prefix / ezproxy modes). Default: cookies.txt next to this file.",
+  "cookies_path": "cookies.txt",
+
+  "_comment_vpn_proxy": "direct mode only: optional proxy used ONLY for the institutional step. Examples: socks5h://127.0.0.1:1080 or http://127.0.0.1:8080. Leave empty if you use a system-wide VPN.",
+  "socks_proxy": "",
+  "http_proxy": "",
+
+  "_comment_download": "Default output directory; override per call with -o.",
+  "download_dir": "~/Downloads/papers",
+
+  "_comment_email": "Prefer the env var UNPAYWALL_EMAIL (any real address) over writing it here.",
+  "unpaywall_email": ""
+}

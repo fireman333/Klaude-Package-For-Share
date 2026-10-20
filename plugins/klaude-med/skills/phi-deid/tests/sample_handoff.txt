@@ -1,0 +1,53 @@
+範例醫院 12A 病房 夜班交班單
+日期：2024-03-18 17:00 → 2024-03-19 08:00
+白班 R：R2 黃志強  |  夜班 on-call：R3 陳俊宏（分機 5234）
+Attending on call：張國榮 教授
+
+======================================================
+床號 | 病歷號 | 病人 | 主診斷 | 今晚注意事項 / To-do
+======================================================
+
+12A-01 | A1122334 | 林美惠女士（65 y/o）
+  主診斷：CAP with mild respiratory failure, POD#0 (2024-03-18)
+  夜班 plan：
+    - O2 via nasal cannula 3 L/min, target SpO2 > 92%
+    - Ceftriaxone 1 g IV q24h + Azithromycin 500 mg IV qd
+    - BT q4h；若 BT > 38.5°C → blood culture × 2 套
+    - 家屬（長子 林志明 0933-123-456）已通知，晚上可能來探視
+
+12A-03 | A1234567 | 王小明先生（72 y/o）
+  主診斷：Sigmoid diverticulitis s/p lap sigmoidectomy，POD#2 (2024-03-18)
+  夜班 plan：
+    - Diet soft, tolerate well；若 nausea/vomiting → NPO + NG tube on standby
+    - Ceftriaxone 2 g IV q24h + Metronidazole 500 mg IV q8h (Day 4)
+    - Pain control：acetaminophen 500 mg PO q6h PRN
+    - Wound：check q8h for bleeding / dehiscence
+    - BS AC/HS + insulin sliding scale；若 glucose < 70 → D50W 50 mL IV push
+
+12A-07 | A9988776 | 陳大雄先生（58 y/o）
+  主診斷：Acute cholecystitis, NPO for OP tomorrow AM (2024-03-19)
+  夜班 plan：
+    - NPO after MN
+    - IV D5/0.45 NS 80 mL/hr, total 2000 mL/24h
+    - Cefazolin 2 g IV 30 min before OR call time (tomorrow 7:30)
+    - 家屬（太太 陳林麗華 0922-987-654）已知 op consent 簽完
+
+12A-12 | A5566778 | 張阿嬤（88 y/o 張王阿花女士）
+  主診斷：UTI + mild delirium, HD#3 (2024-03-18)
+  夜班 plan：
+    - Continue Ceftriaxone 1 g IV q24h
+    - 夜間可能 confused → fall precaution, bed rail up, call bell within reach
+    - 若躁動：haloperidol 0.5 mg IM q4h PRN（最多 2 次/夜）
+    - I/O monitor；若 < 500 mL/8h → 通知 on-call
+    - 家屬 (媳婦 林小雅 0955-246-810) 在病房陪病
+
+======================================================
+病房 notes
+======================================================
+- 空床：12A-02, 12A-05, 12A-09（急診若有新收，請先收這三床）
+- 12A-04 今早 discharge 已清床
+- 晚間 21:00 張國榮教授 routine round
+- 若需 consult 外科：one call to 陳文華 主任（0988-112-233）
+
+交班者：R2 黃志強
+接班者：R3 陳俊宏

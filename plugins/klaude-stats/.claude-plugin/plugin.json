@@ -1,0 +1,10 @@
+{
+  "name": "klaude-stats",
+  "description": "臨床研究統計：Table 1、Kaplan-Meier、competing risk、Cox / logistic、PSM、AUC，加上可選的 research-plan 總指揮",
+  "version": "1.0.0",
+  "author": {
+    "name": "fireman333"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/fireman333/Klaude-Package-For-Share"
+}

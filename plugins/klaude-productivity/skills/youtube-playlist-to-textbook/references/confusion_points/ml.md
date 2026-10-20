@@ -1,0 +1,5 @@
+- **訓練（train）／驗證（validation）／測試（test）集**：臨床試驗熟 derivation / validation cohort，但容易把 test set 當 validation 用。要強調 test set 必須只碰一次。
+- **Overfitting vs Underfitting**：類比：臨床預測模型如果只在一家醫院訓練就用，換到另一家會失準。
+- **Gradient descent 的直覺**：想像爬山下坡，每次往最陡方向走一小步。learning rate 太大會跨過谷底，太小則走不完。
+- **Regularization 不是懲罰「錯的答案」**：是懲罰「太複雜的解釋」，類比 Occam's razor。
+- **Bias-Variance tradeoff**：跟臨床診斷的 sensitivity-specificity 很像但不完全一樣，要明講差異。

@@ -1,0 +1,17 @@
+{
+  "_comment": "NEJM palette — slightly muted, classic medical-journal blues and earthtones. Aligns with recurring KM and forest plots in NEJM flagship trials.",
+  "nejm_blue":   "#2E5C8A",
+  "nejm_blue_l": "#7A9BC2",
+  "nejm_blue_d": "#1A3F66",
+  "nejm_green":  "#3E8E41",
+  "nejm_green_l":"#A2C9A0",
+  "nejm_red":    "#B22222",
+  "nejm_red_l":  "#E9A0A0",
+  "nejm_orange": "#D97A2C",
+  "nejm_purple": "#6F4E7C",
+  "gray_1":      "#EFEFEF",
+  "gray_2":      "#9E9E9E",
+  "gray_3":      "#525252",
+  "black":       "#000000",
+  "white":       "#FFFFFF"
+}

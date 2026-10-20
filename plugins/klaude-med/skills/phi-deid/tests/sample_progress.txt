@@ -1,0 +1,57 @@
+範例醫院 感染科 Progress Note
+====================================
+病歷號：A1234567
+床號：12A-03
+病人：王小明先生（72 y/o male）
+日期：2024-03-18（POD#0, HD#4）
+
+S (Subjective)
+--------------
+昨夜睡眠尚可，腹痛較前 2 日改善。自覺發燒已退。
+食慾漸回復，早餐吃約 1/3 份稀飯。無 nausea、vomiting。
+解便 yesterday 1 次，軟便，無血便。
+
+O (Objective)
+-------------
+Vital signs (last 24h)：BT 37.2-37.8°C、HR 82-95 bpm、BP 125-138/72-84 mmHg、SpO2 97-99%。
+PE：abdomen soft, LLQ mild tenderness without rebound, bowel sound normoactive。
+Wound：surgical wound clean and dry, no dehiscence。
+
+Labs (2024-03-18 AM)：
+    WBC 9.8 K/uL（peak 18.2 on 2024-03-15）, Neut 68%
+    CRP 4.2 mg/dL（peak 12.5 on 2024-03-16）
+    BUN/Cre 14/0.9 mg/dL
+    Na/K 138/4.1 mmol/L
+    Glucose 142 mg/dL（AC）
+
+A/P (Assessment & Plan)
+-----------------------
+#1 Sigmoid diverticulitis with perforation, s/p laparoscopic sigmoidectomy 2024-03-16 (POD#2)
+   - Clinical response to IV antibiotics, WBC/CRP downtrend
+   - Continue Ceftriaxone 2 g IV q24h + Metronidazole 500 mg IV q8h（Day 4）
+   - 預計 2024-03-20 改 PO cefuroxime（Zinnat）500 mg bid + metronidazole 500 mg PO tid
+   - 已 consult 外科 R3 陳俊宏 評估 wound 情況
+
+#2 Hypertension, well-controlled
+   - Continue amlodipine（Norvasc） 5 mg PO qd
+   - BP 目標 < 140/90
+
+#3 Diabetes mellitus, type 2
+   - Fasting glucose 142，稍偏高但可接受
+   - 住院暫停 glimepiride（Amaryl），改 insulin RI sliding scale
+   - 出院前 2 天 resume metformin（Glucophage） 500 mg PO bid
+
+#4 Family concern
+   - 個案之長子 王大華 來電（0912-345-678）詢問病情
+   - 已向家屬（王大華）說明 post-op course + 預計出院時間
+
+Plan for today
+--------------
+1. Follow CBC/CRP tomorrow AM
+2. Diet advance to soft diet if tolerate
+3. Continue early ambulation QID
+4. Physical therapy consult for strengthening
+
+Attending：張國榮教授（分機 5678）
+Resident：R2 黃志強（on call tonight）
+Nurse：李美麗 NS（primary care nurse）

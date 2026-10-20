@@ -1,0 +1,18 @@
+{
+  "study_id": "fixture_absurd_hr",
+  "data_file": "data.xlsx",
+  "population": {"filters": [], "min_n": 50, "index_date": "diagnosis_date"},
+  "grouping": {"column": "treatment", "reference_level": "control"},
+  "covariates": [{"column": "age", "type": "continuous", "adjust": true}],
+  "pipeline": [
+    {"id": "multi_os", "skill": "multivariate-interaction",
+     "config_file": "multi_os_config.json",
+     "output_file": "Multi_OS.csv",
+     "log_file": "logs/multi_os.log",
+     "success_criteria": [
+       {"description": "HR should be in [0.01, 100]", "check": "HR <= 100", "severity": "blocking"}
+     ],
+     "qc_warnings": []}
+  ],
+  "guardian": {"mode": "standard"}
+}

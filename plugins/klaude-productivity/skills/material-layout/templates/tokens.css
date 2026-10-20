@@ -1,0 +1,40 @@
+/* Material Design 3 layout tokens — drop into :root */
+
+:root {
+  /* --- Breakpoints (min-width, px) --- */
+  --bp-medium:   600px;
+  --bp-expanded: 840px;
+  --bp-large:    1200px;
+  --bp-xlarge:   1600px;
+
+  /* --- Spacing scale (4/8 grid) --- */
+  --sp-0:  0;
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-14: 56px;
+  --sp-16: 64px;
+
+  /* --- Grid tokens, will be redefined per breakpoint on .m3-grid --- */
+  --grid-cols:   4;
+  --grid-gutter: 16px;
+  --grid-margin: 16px;
+
+  /* --- App shell frame --- */
+  --topbar-h:    64px;   /* small top app bar */
+  --topbar-h-md: 112px;  /* medium top app bar */
+  --topbar-h-lg: 152px;  /* large top app bar */
+  --bottomnav-h: 80px;   /* labelled bottom nav */
+  --rail-w:      80px;   /* collapsed navigation rail */
+  --rail-w-exp:  256px;  /* expanded rail replaces drawer */
+  --drawer-w:    256px;  /* persistent drawer (256–360 allowed) */
+
+  /* --- Content caps --- */
+  --body-max:    1600px; /* absolute cap for XL */
+  --prose-max:   75ch;   /* reading width for prose */
+}

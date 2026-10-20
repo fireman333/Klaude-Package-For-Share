@@ -1,0 +1,37 @@
+{
+  "name": "klaude-package-for-share",
+  "description": "WLK M.D. 常用的醫學、統計、簡報與生產力 Claude Code skills",
+  "owner": {
+    "name": "fireman333"
+  },
+  "plugins": [
+    {
+      "name": "klaude-stats",
+      "source": "./plugins/klaude-stats",
+      "description": "臨床研究統計：Table 1、Kaplan-Meier、competing risk、Cox / logistic、PSM、AUC，加上可選的 research-plan 總指揮",
+      "version": "1.0.0",
+      "category": "statistics"
+    },
+    {
+      "name": "klaude-med",
+      "source": "./plugins/klaude-med",
+      "description": "醫學寫作與文獻：論文 Results / Methods、PubMed 搜尋、合法全文下載、去識別化、臨床分數、OpenEvidence 查證",
+      "version": "1.0.0",
+      "category": "medical"
+    },
+    {
+      "name": "klaude-slides-docs",
+      "source": "./plugins/klaude-slides-docs",
+      "description": "簡報與文件：病例討論 / 書報討論投影片、pptx 視覺檢查、講稿 handout、Markdown→PDF、PDF 拆分與精準問答",
+      "version": "1.0.0",
+      "category": "documents"
+    },
+    {
+      "name": "klaude-productivity",
+      "source": "./plugins/klaude-productivity",
+      "description": "生產力：拷問式釐清決策、查有沒有現成輪子、自動 git、授權選擇、建立你自己的寫作風格",
+      "version": "1.0.0",
+      "category": "productivity"
+    }
+  ]
+}

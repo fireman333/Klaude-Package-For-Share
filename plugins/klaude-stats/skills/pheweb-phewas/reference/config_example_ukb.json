@@ -1,0 +1,832 @@
+{
+ "cohort": "UK Biobank (Neale lab) — PheWeb",
+ "site": "https://pheweb.org/UKB-Neale",
+ "population": "UK Biobank, predominantly British / European ancestry",
+ "retrieved": "2026-08-06",
+ "build": "GRCh37 / hg19",
+ "p_cut": 5e-08,
+ "p_cut_label": "5e-8",
+ "header_colour": "4472C4",
+ "snps": [
+  "rs11207982",
+  "rs13397297",
+  "rs17026651",
+  "rs9995159",
+  "rs113012699",
+  "rs112784971",
+  "rs12546317",
+  "rs7466988",
+  "rs310864",
+  "rs3783113",
+  "rs111789331"
+ ],
+ "domains": [
+  "1. Coronary artery disease / MI / angina",
+  "2. Heart failure",
+  "3. Arrhythmia / AF / flutter",
+  "4. Stroke / intracranial haemorrhage",
+  "5. Diabetes mellitus / glycaemia",
+  "6. Hypertension / blood pressure",
+  "7. Dyslipidaemia / lipids / statins",
+  "8. BMI / height / weight",
+  "9. Peripheral artery disease"
+ ],
+ "groups": {
+  "20002_1473": [
+   "High cholesterol (self-reported hypercholesterolaemia)",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "6153_1": [
+   "Lipid-lowering medication (statin / ezetimibe)",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "6177_1": [
+   "Lipid-lowering medication (statin / ezetimibe)",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "6153_100": [
+   "Lipid-lowering medication (statin / ezetimibe)",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "6177_100": [
+   "Lipid-lowering medication (statin / ezetimibe)",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "20003_1140861958": [
+   "Lipid-lowering medication (statin / ezetimibe)",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "20003_1141146234": [
+   "Lipid-lowering medication (statin / ezetimibe)",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "20003_1141146138": [
+   "Lipid-lowering medication (statin / ezetimibe)",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "20003_1141192410": [
+   "Lipid-lowering medication (statin / ezetimibe)",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "20003_1141192736": [
+   "Lipid-lowering medication (statin / ezetimibe)",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "20003_1141192740": [
+   "Lipid-lowering medication (statin / ezetimibe)",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "20002_1074": [
+   "Coronary artery disease (angina / MI / chronic ischaemic heart disease)",
+   "1. Coronary artery disease / MI / angina",
+   "direct"
+  ],
+  "20002_1075": [
+   "Coronary artery disease (angina / MI / chronic ischaemic heart disease)",
+   "1. Coronary artery disease / MI / angina",
+   "direct"
+  ],
+  "6150_1": [
+   "Coronary artery disease (angina / MI / chronic ischaemic heart disease)",
+   "1. Coronary artery disease / MI / angina",
+   "direct"
+  ],
+  "6150_2": [
+   "Coronary artery disease (angina / MI / chronic ischaemic heart disease)",
+   "1. Coronary artery disease / MI / angina",
+   "direct"
+  ],
+  "I25": [
+   "Coronary artery disease (angina / MI / chronic ischaemic heart disease)",
+   "1. Coronary artery disease / MI / angina",
+   "direct"
+  ],
+  "20107_1": [
+   "Family history of heart disease (father)",
+   "1. Coronary artery disease / MI / angina",
+   "borderline — advisor to confirm"
+  ],
+  "20003_1140868226": [
+   "Antiplatelet therapy (aspirin)",
+   "1. Coronary artery disease / MI / angina",
+   "borderline — advisor to confirm"
+  ],
+  "4717": [
+   "Exertional dyspnoea (shortness of breath on level ground)",
+   "2. Heart failure",
+   "borderline — advisor to confirm"
+  ],
+  "102": [
+   "Pulse rate (resting heart rate)",
+   "3. Arrhythmia / AF / flutter",
+   "borderline — advisor to confirm"
+  ],
+  "4194": [
+   "Pulse rate (resting heart rate)",
+   "3. Arrhythmia / AF / flutter",
+   "borderline — advisor to confirm"
+  ],
+  "4079": [
+   "Diastolic blood pressure",
+   "6. Hypertension / blood pressure",
+   "direct"
+  ],
+  "20003_1140888556": [
+   "Antihypertensive medication (ACE inhibitor / alpha-blocker / calcium-channel blocker)",
+   "6. Hypertension / blood pressure",
+   "direct"
+  ],
+  "20003_1140860690": [
+   "Antihypertensive medication (ACE inhibitor / alpha-blocker / calcium-channel blocker)",
+   "6. Hypertension / blood pressure",
+   "direct"
+  ],
+  "20003_1141199858": [
+   "Antihypertensive medication (ACE inhibitor / alpha-blocker / calcium-channel blocker)",
+   "6. Hypertension / blood pressure",
+   "direct"
+  ],
+  "20003_1140879818": [
+   "Beta-blocker (metoprolol)",
+   "6. Hypertension / blood pressure",
+   "borderline — advisor to confirm"
+  ],
+  "20110_8": [
+   "Family history of hypertension (mother)",
+   "6. Hypertension / blood pressure",
+   "borderline — advisor to confirm"
+  ],
+  "21021": [
+   "Arterial stiffness (pulse-wave indices)",
+   "6. Hypertension / blood pressure",
+   "borderline — advisor to confirm"
+  ],
+  "4196": [
+   "Arterial stiffness (pulse-wave indices)",
+   "6. Hypertension / blood pressure",
+   "borderline — advisor to confirm"
+  ],
+  "2443": [
+   "Diabetes mellitus (doctor-diagnosed / self-reported, incl. type 2)",
+   "5. Diabetes mellitus / glycaemia",
+   "direct"
+  ],
+  "20002_1220": [
+   "Diabetes mellitus (doctor-diagnosed / self-reported, incl. type 2)",
+   "5. Diabetes mellitus / glycaemia",
+   "direct"
+  ],
+  "20002_1223": [
+   "Diabetes mellitus (doctor-diagnosed / self-reported, incl. type 2)",
+   "5. Diabetes mellitus / glycaemia",
+   "direct"
+  ],
+  "20003_1140884600": [
+   "Diabetes medication (metformin)",
+   "5. Diabetes mellitus / glycaemia",
+   "direct"
+  ],
+  "20110_9": [
+   "Family history of diabetes (parents)",
+   "5. Diabetes mellitus / glycaemia",
+   "borderline — advisor to confirm"
+  ],
+  "20107_9": [
+   "Family history of diabetes (parents)",
+   "5. Diabetes mellitus / glycaemia",
+   "borderline — advisor to confirm"
+  ],
+  "50": [
+   "Standing height",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "1697": [
+   "Comparative height at age 10",
+   "8. BMI / height / weight",
+   "borderline — advisor to confirm"
+  ],
+  "21002": [
+   "Body weight / fat mass / fat percentage / waist circumference",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "2306": [
+   "Body weight / fat mass / fat percentage / waist circumference",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "48": [
+   "Body weight / fat mass / fat percentage / waist circumference",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "23099": [
+   "Body weight / fat mass / fat percentage / waist circumference",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "23100": [
+   "Body weight / fat mass / fat percentage / waist circumference",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "23111": [
+   "Body weight / fat mass / fat percentage / waist circumference",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "23112": [
+   "Body weight / fat mass / fat percentage / waist circumference",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "23115": [
+   "Body weight / fat mass / fat percentage / waist circumference",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "23116": [
+   "Body weight / fat mass / fat percentage / waist circumference",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "23119": [
+   "Body weight / fat mass / fat percentage / waist circumference",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "23120": [
+   "Body weight / fat mass / fat percentage / waist circumference",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "23123": [
+   "Body weight / fat mass / fat percentage / waist circumference",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "23124": [
+   "Body weight / fat mass / fat percentage / waist circumference",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "23127": [
+   "Body weight / fat mass / fat percentage / waist circumference",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "23128": [
+   "Body weight / fat mass / fat percentage / waist circumference",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "23121": [
+   "Lean (fat-free) body mass",
+   "8. BMI / height / weight",
+   "borderline — advisor to confirm"
+  ],
+  "23122": [
+   "Lean (fat-free) body mass",
+   "8. BMI / height / weight",
+   "borderline — advisor to confirm"
+  ],
+  "23125": [
+   "Lean (fat-free) body mass",
+   "8. BMI / height / weight",
+   "borderline — advisor to confirm"
+  ],
+  "23126": [
+   "Lean (fat-free) body mass",
+   "8. BMI / height / weight",
+   "borderline — advisor to confirm"
+  ],
+  "23118": [
+   "Lean (fat-free) body mass",
+   "8. BMI / height / weight",
+   "borderline — advisor to confirm"
+  ],
+  "23105": [
+   "Body composition (basal metabolic rate / bioimpedance)",
+   "8. BMI / height / weight",
+   "borderline — advisor to confirm"
+  ],
+  "23109": [
+   "Body composition (basal metabolic rate / bioimpedance)",
+   "8. BMI / height / weight",
+   "borderline — advisor to confirm"
+  ],
+  "20110_10": [
+   "Alzheimer's disease / dementia (self + family history)",
+   null,
+   "direct"
+  ],
+  "20107_10": [
+   "Alzheimer's disease / dementia (self + family history)",
+   null,
+   "direct"
+  ],
+  "20111_10": [
+   "Alzheimer's disease / dementia (self + family history)",
+   null,
+   "direct"
+  ],
+  "20002_1263": [
+   "Alzheimer's disease / dementia (self + family history)",
+   null,
+   "direct"
+  ],
+  "40001_G309": [
+   "Alzheimer's disease / dementia (self + family history)",
+   null,
+   "direct"
+  ],
+  "40001_F019": [
+   "Alzheimer's disease / dementia (self + family history)",
+   null,
+   "direct"
+  ],
+  "40001_F03": [
+   "Alzheimer's disease / dementia (self + family history)",
+   null,
+   "direct"
+  ],
+  "20110_100": [
+   "Alzheimer's disease / dementia (self + family history)",
+   null,
+   "direct"
+  ],
+  "20107_100": [
+   "Alzheimer's disease / dementia (self + family history)",
+   null,
+   "direct"
+  ],
+  "1797": [
+   "Parental lifespan / survival",
+   null,
+   "direct"
+  ],
+  "1807": [
+   "Parental lifespan / survival",
+   null,
+   "direct"
+  ],
+  "1835": [
+   "Parental lifespan / survival",
+   null,
+   "direct"
+  ],
+  "3526": [
+   "Parental lifespan / survival",
+   null,
+   "direct"
+  ],
+  "20150": [
+   "Lung function (FEV1 / FVC)",
+   null,
+   "direct"
+  ],
+  "20151": [
+   "Lung function (FEV1 / FVC)",
+   null,
+   "direct"
+  ],
+  "3062": [
+   "Lung function (FEV1 / FVC)",
+   null,
+   "direct"
+  ],
+  "I30": [
+   "Pericarditis",
+   null,
+   "direct"
+  ],
+  "20002_1589": [
+   "Pericarditis",
+   null,
+   "direct"
+  ],
+  "I34": [
+   "Non-rheumatic mitral valve disorder",
+   null,
+   "direct"
+  ],
+  "20002_1462": [
+   "Crohn's disease",
+   null,
+   "direct"
+  ],
+  "1200": [
+   "Sleep (insomnia / snoring)",
+   null,
+   "direct"
+  ],
+  "1210": [
+   "Sleep (insomnia / snoring)",
+   null,
+   "direct"
+  ],
+  "6159_4": [
+   "Pain (back / facial)",
+   null,
+   "direct"
+  ],
+  "6159_2": [
+   "Pain (back / facial)",
+   null,
+   "direct"
+  ],
+  "904": [
+   "Physical activity",
+   null,
+   "direct"
+  ],
+  "943": [
+   "Physical activity",
+   null,
+   "direct"
+  ],
+  "6138_100": [
+   "Education / employment / area of residence (likely confounding)",
+   null,
+   "direct"
+  ],
+  "6138_6": [
+   "Education / employment / area of residence (likely confounding)",
+   null,
+   "direct"
+  ],
+  "845": [
+   "Education / employment / area of residence (likely confounding)",
+   null,
+   "direct"
+  ],
+  "6142_3": [
+   "Education / employment / area of residence (likely confounding)",
+   null,
+   "direct"
+  ],
+  "20118_11": [
+   "Education / employment / area of residence (likely confounding)",
+   null,
+   "direct"
+  ],
+  "2926": [
+   "Smoking cessation attempts",
+   null,
+   "direct"
+  ],
+  "2664_3": [
+   "Reduced alcohol intake for health reasons",
+   null,
+   "direct"
+  ],
+  "40001_C20": [
+   "Cancer (rectum / ureter / oesophagus / any)",
+   null,
+   "direct"
+  ],
+  "40001_C66": [
+   "Cancer (rectum / ureter / oesophagus / any)",
+   null,
+   "direct"
+  ],
+  "20001_1017": [
+   "Cancer (rectum / ureter / oesophagus / any)",
+   null,
+   "direct"
+  ],
+  "40009": [
+   "Cancer (rectum / ureter / oesophagus / any)",
+   null,
+   "direct"
+  ],
+  "40001_K802": [
+   "Other causes of death (gallstones / rheumatoid arthritis)",
+   null,
+   "direct"
+  ],
+  "40001_M069": [
+   "Other causes of death (gallstones / rheumatoid arthritis)",
+   null,
+   "direct"
+  ],
+  "30510": [
+   "Urinary measures (creatinine / potassium / haematuria)",
+   null,
+   "direct"
+  ],
+  "30520": [
+   "Urinary measures (creatinine / potassium / haematuria)",
+   null,
+   "direct"
+  ],
+  "R31": [
+   "Urinary measures (creatinine / potassium / haematuria)",
+   null,
+   "direct"
+  ],
+  "78": [
+   "Heel bone mineral density",
+   null,
+   "direct"
+  ],
+  "399": [
+   "Cognitive test score / loneliness",
+   null,
+   "direct"
+  ],
+  "2020": [
+   "Cognitive test score / loneliness",
+   null,
+   "direct"
+  ],
+  "6149_100": [
+   "Dental problems",
+   null,
+   "direct"
+  ],
+  "20002_1134": [
+   "Other conditions (oesophageal, thyroid, breast, pyloric stenosis, neuralgia, undescended testicle, polyarthrosis, benign skin neoplasm, malaria, paternal depression)",
+   null,
+   "direct"
+  ],
+  "20002_1228": [
+   "Other conditions (oesophageal, thyroid, breast, pyloric stenosis, neuralgia, undescended testicle, polyarthrosis, benign skin neoplasm, malaria, paternal depression)",
+   null,
+   "direct"
+  ],
+  "20002_1364": [
+   "Other conditions (oesophageal, thyroid, breast, pyloric stenosis, neuralgia, undescended testicle, polyarthrosis, benign skin neoplasm, malaria, paternal depression)",
+   null,
+   "direct"
+  ],
+  "20002_1501": [
+   "Other conditions (oesophageal, thyroid, breast, pyloric stenosis, neuralgia, undescended testicle, polyarthrosis, benign skin neoplasm, malaria, paternal depression)",
+   null,
+   "direct"
+  ],
+  "20002_1523": [
+   "Other conditions (oesophageal, thyroid, breast, pyloric stenosis, neuralgia, undescended testicle, polyarthrosis, benign skin neoplasm, malaria, paternal depression)",
+   null,
+   "direct"
+  ],
+  "20002_1679": [
+   "Other conditions (oesophageal, thyroid, breast, pyloric stenosis, neuralgia, undescended testicle, polyarthrosis, benign skin neoplasm, malaria, paternal depression)",
+   null,
+   "direct"
+  ],
+  "M15": [
+   "Other conditions (oesophageal, thyroid, breast, pyloric stenosis, neuralgia, undescended testicle, polyarthrosis, benign skin neoplasm, malaria, paternal depression)",
+   null,
+   "direct"
+  ],
+  "D23": [
+   "Other conditions (oesophageal, thyroid, breast, pyloric stenosis, neuralgia, undescended testicle, polyarthrosis, benign skin neoplasm, malaria, paternal depression)",
+   null,
+   "direct"
+  ],
+  "B50": [
+   "Other conditions (oesophageal, thyroid, breast, pyloric stenosis, neuralgia, undescended testicle, polyarthrosis, benign skin neoplasm, malaria, paternal depression)",
+   null,
+   "direct"
+  ],
+  "20107_12": [
+   "Other conditions (oesophageal, thyroid, breast, pyloric stenosis, neuralgia, undescended testicle, polyarthrosis, benign skin neoplasm, malaria, paternal depression)",
+   null,
+   "direct"
+  ],
+  "20003_1141157324": [
+   "Other medications (antihistamine, beta-agonist, PPI, B12, penicillin, sildenafil, mefenamic acid, methotrexate, mebeverine, multivitamin, solifenacin)",
+   null,
+   "direct"
+  ],
+  "20003_1141179830": [
+   "Other medications (antihistamine, beta-agonist, PPI, B12, penicillin, sildenafil, mefenamic acid, methotrexate, mebeverine, multivitamin, solifenacin)",
+   null,
+   "direct"
+  ],
+  "20003_1140882082": [
+   "Other medications (antihistamine, beta-agonist, PPI, B12, penicillin, sildenafil, mefenamic acid, methotrexate, mebeverine, multivitamin, solifenacin)",
+   null,
+   "direct"
+  ],
+  "20003_1141157264": [
+   "Other medications (antihistamine, beta-agonist, PPI, B12, penicillin, sildenafil, mefenamic acid, methotrexate, mebeverine, multivitamin, solifenacin)",
+   null,
+   "direct"
+  ],
+  "20003_1141177526": [
+   "Other medications (antihistamine, beta-agonist, PPI, B12, penicillin, sildenafil, mefenamic acid, methotrexate, mebeverine, multivitamin, solifenacin)",
+   null,
+   "direct"
+  ],
+  "20003_1140870512": [
+   "Other medications (antihistamine, beta-agonist, PPI, B12, penicillin, sildenafil, mefenamic acid, methotrexate, mebeverine, multivitamin, solifenacin)",
+   null,
+   "direct"
+  ],
+  "20003_1140888758": [
+   "Other medications (antihistamine, beta-agonist, PPI, B12, penicillin, sildenafil, mefenamic acid, methotrexate, mebeverine, multivitamin, solifenacin)",
+   null,
+   "direct"
+  ],
+  "20003_1141168944": [
+   "Other medications (antihistamine, beta-agonist, PPI, B12, penicillin, sildenafil, mefenamic acid, methotrexate, mebeverine, multivitamin, solifenacin)",
+   null,
+   "direct"
+  ],
+  "20003_1140871542": [
+   "Other medications (antihistamine, beta-agonist, PPI, B12, penicillin, sildenafil, mefenamic acid, methotrexate, mebeverine, multivitamin, solifenacin)",
+   null,
+   "direct"
+  ],
+  "20003_1140869848": [
+   "Other medications (antihistamine, beta-agonist, PPI, B12, penicillin, sildenafil, mefenamic acid, methotrexate, mebeverine, multivitamin, solifenacin)",
+   null,
+   "direct"
+  ],
+  "20003_1140879428": [
+   "Other medications (antihistamine, beta-agonist, PPI, B12, penicillin, sildenafil, mefenamic acid, methotrexate, mebeverine, multivitamin, solifenacin)",
+   null,
+   "direct"
+  ],
+  "20003_1140876592": [
+   "Other medications (antihistamine, beta-agonist, PPI, B12, penicillin, sildenafil, mefenamic acid, methotrexate, mebeverine, multivitamin, solifenacin)",
+   null,
+   "direct"
+  ],
+  "20003_1141200384": [
+   "Other medications (antihistamine, beta-agonist, PPI, B12, penicillin, sildenafil, mefenamic acid, methotrexate, mebeverine, multivitamin, solifenacin)",
+   null,
+   "direct"
+  ]
+ },
+ "panel": [
+  [
+   "1. Coronary artery disease / MI / angina",
+   "20002_1074"
+  ],
+  [
+   "1. Coronary artery disease / MI / angina",
+   "20002_1075"
+  ],
+  [
+   "1. Coronary artery disease / MI / angina",
+   "I20"
+  ],
+  [
+   "1. Coronary artery disease / MI / angina",
+   "I21"
+  ],
+  [
+   "1. Coronary artery disease / MI / angina",
+   "I25"
+  ],
+  [
+   "2. Heart failure",
+   "20002_1076"
+  ],
+  [
+   "2. Heart failure",
+   "I50"
+  ],
+  [
+   "3. Arrhythmia / AF / flutter",
+   "20002_1471"
+  ],
+  [
+   "3. Arrhythmia / AF / flutter",
+   "20002_1077"
+  ],
+  [
+   "3. Arrhythmia / AF / flutter",
+   "I48"
+  ],
+  [
+   "3. Arrhythmia / AF / flutter",
+   "I49"
+  ],
+  [
+   "4. Stroke / intracranial haemorrhage",
+   "20002_1081"
+  ],
+  [
+   "4. Stroke / intracranial haemorrhage",
+   "6150_3"
+  ],
+  [
+   "4. Stroke / intracranial haemorrhage",
+   "I64"
+  ],
+  [
+   "4. Stroke / intracranial haemorrhage",
+   "I61"
+  ],
+  [
+   "4. Stroke / intracranial haemorrhage",
+   "I60"
+  ],
+  [
+   "5. Diabetes mellitus / glycaemia",
+   "2443"
+  ],
+  [
+   "5. Diabetes mellitus / glycaemia",
+   "20002_1222"
+  ],
+  [
+   "5. Diabetes mellitus / glycaemia",
+   "20002_1223"
+  ],
+  [
+   "5. Diabetes mellitus / glycaemia",
+   "20003_1140884600"
+  ],
+  [
+   "5. Diabetes mellitus / glycaemia",
+   "6153_3"
+  ],
+  [
+   "6. Hypertension / blood pressure",
+   "20002_1065"
+  ],
+  [
+   "6. Hypertension / blood pressure",
+   "I10"
+  ],
+  [
+   "6. Hypertension / blood pressure",
+   "4080"
+  ],
+  [
+   "6. Hypertension / blood pressure",
+   "4079"
+  ],
+  [
+   "6. Hypertension / blood pressure",
+   "6153_2"
+  ],
+  [
+   "7. Dyslipidaemia / lipids / statins",
+   "20002_1473"
+  ],
+  [
+   "7. Dyslipidaemia / lipids / statins",
+   "6153_1"
+  ],
+  [
+   "7. Dyslipidaemia / lipids / statins",
+   "20003_1140861958"
+  ],
+  [
+   "7. Dyslipidaemia / lipids / statins",
+   "20003_1141146234"
+  ],
+  [
+   "8. BMI / height / weight",
+   "50"
+  ],
+  [
+   "8. BMI / height / weight",
+   "21002"
+  ],
+  [
+   "8. BMI / height / weight",
+   "48"
+  ],
+  [
+   "8. BMI / height / weight",
+   "23099"
+  ],
+  [
+   "9. Peripheral artery disease",
+   "20002_1067"
+  ],
+  [
+   "9. Peripheral artery disease",
+   "20002_1087"
+  ],
+  [
+   "9. Peripheral artery disease",
+   "I73"
+  ]
+ ],
+ "notes": [
+  "rs17026651 (GRCh37 chr3:30879358) is NOT in this dataset — both the variant page and the API return null. Use Open Targets Genetics, the GWAS Catalog, or a proxy SNP in high linkage disequilibrium instead.",
+  "This PheWeb release contains no serum-biomarker GWAS: LDL, HDL, triglycerides, total cholesterol, HbA1c and BMI do not exist as traits. Dyslipidaemia is captured only through self-reported high cholesterol and lipid-lowering medication, adiposity only through weight, fat mass and waist circumference.",
+  "'None of the above' medication categories are the inverse coding of the same question and are merged into the corresponding medication group in table b.",
+  "Beta is on the Neale-lab linear-model scale; for binary traits it is not an odds ratio."
+ ]
+}

@@ -1,0 +1,28 @@
+# Default thresholds for survival-diagnostics
+# Override by setting `thresholds_file` in diagnostic_config.json to a copy of this file.
+# Source of defaults: htlin222/survival-pipe config/thresholds.yaml
+
+competing_risks:
+  min_event_types: 2                    # >= 2 distinct event codes (beyond 0 = censor)
+  cif_km_divergence_threshold: 0.05     # max|CIF - (1-KM)| > this triggers flag
+
+recurrent_events:
+  min_events_per_subject: 2             # a subject "has recurrent events" if ≥ this count
+  min_pct_recurrent: 0.05               # ≥ 5% subjects with recurrent events triggers flag
+
+time_varying:
+  immortal_time_ratio_threshold: 0.10   # immortal time / total follow-up > this
+  exposure_change_pct: 0.05             # ≥ 5% subjects change exposure status
+
+left_truncation:
+  min_pct_truncated: 0.05               # ≥ 5% subjects have entry_time > 0
+  entry_time_variance_threshold: 0.01   # (reserved for informative-truncation scoring)
+
+informative_censoring:
+  covariate_test_alpha: 0.05            # Wilcoxon / chi-square alpha
+  min_censoring_rate: 0.10              # only test when ≥ 10% censored
+
+clustering:
+  icc_threshold: 0.01                   # ICC > this → frailty; else robust_se
+  min_clusters: 3                       # need ≥ 3 clusters to flag
+  min_cluster_size: 5                   # average cluster size ≥ this

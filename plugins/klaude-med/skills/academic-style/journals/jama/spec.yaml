@@ -1,0 +1,76 @@
+journal:
+  name: JAMA
+  short: jama
+  publisher: American Medical Association
+  spec_version: "2025.01"
+  source_priority: [author_guideline, sample_papers, yuan1z0825]
+  sources:
+    author_guideline: https://jamanetwork.com/journals/jama/pages/instructions-for-authors
+    sample_dois:
+      - "10.1001/jama.2023.21443"
+      - "10.1001/jama.2024.6633"
+    third_party_credit: "github.com/Yuan1z0825/nature-skills (MIT)"
+
+typography:
+  font_stack: [Helvetica, Arial, "Liberation Sans", DejaVu Sans]
+  base_size_pt: 8
+  sizes_pt:
+    title: 9
+    axis_label: 8
+    tick: 7
+    legend: 7
+    panel_label: 9
+  panel_label:
+    style: bold
+    case: upper
+    format: "A"
+
+dimensions:
+  units: mm
+  single_column: {width: 84,  max_height: 230}
+  double_column: {width: 174, max_height: 230}
+  full_width:    {width: 174, max_height: 230}
+  dpi_raster: 300
+  dpi_preview: 150
+
+lines:
+  axis_linewidth: 0.75
+  data_linewidth: 1.25
+  tick_length: 2.5
+  tick_direction: out
+
+palette:
+  ref: palette.json
+
+semantic_mapping:
+  primary_method: navy_main
+  positive_outcome: teal_main
+  control_or_negative: red_jama
+  neutral_reference: gray_2
+  highlight: gold_main
+
+submission:
+  vector_format: TIFF
+  raster_format: TIFF
+  preview_format: PNG
+  svg_fonttype: none
+  embed_fonts: true
+
+caption:
+  template: "Figure {n}. {title}. {body} {panel_descriptions}"
+  title_case: sentence
+  notes: "Describe panels, sample sizes, error bars, statistical test in body."
+  panel_separator: ". "
+  bold_title: false
+  significance_legend_inline: false
+
+ax_style:
+  spines_visible: [bottom, left, top, right]
+  grid: false
+  legend_frame: true
+
+table_style:
+  decimal_places: {percent: 1, p_value: 3, hr: 2, ci: 2}
+  p_value_format: "<.001"
+  bold_significant: false
+  shading: none

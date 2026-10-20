@@ -1,0 +1,17 @@
+{
+  "_comment": "Nature semantic palette. Inspired by Yuan1z0825/nature-skills NMI_PASTEL system. Low saturation, panel-coherent.",
+  "blue_main":    "#1F77B4",
+  "blue_light":   "#74A9CF",
+  "blue_dark":    "#08519C",
+  "green_3":      "#33A02C",
+  "green_light":  "#B2DF8A",
+  "red_strong":   "#E31A1C",
+  "red_light":    "#FB9A99",
+  "orange_main":  "#FF7F00",
+  "purple_main":  "#6A3D9A",
+  "gray_1":       "#F0F0F0",
+  "gray_2":       "#BDBDBD",
+  "gray_3":       "#737373",
+  "black":        "#000000",
+  "white":        "#FFFFFF"
+}

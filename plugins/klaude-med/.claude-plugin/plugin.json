@@ -1,0 +1,10 @@
+{
+  "name": "klaude-med",
+  "description": "醫學寫作與文獻：論文 Results / Methods、PubMed 搜尋、合法全文下載、去識別化、臨床分數、OpenEvidence 查證",
+  "version": "1.0.0",
+  "author": {
+    "name": "fireman333"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/fireman333/Klaude-Package-For-Share"
+}

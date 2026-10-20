@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>M3 canonical layout — List-Detail</title>
+  <link rel="stylesheet" href="./tokens.css" />
+  <link rel="stylesheet" href="./grid.css" />
+  <style>
+    body { margin: 0; font-family: system-ui, sans-serif; background: #fafafa; }
+
+    /* App shell */
+    .app-shell {
+      display: grid;
+      min-height: 100dvh;
+      grid-template-rows: var(--topbar-h) 1fr var(--bottomnav-h);
+      grid-template-areas: "topbar" "body" "bottomnav";
+    }
+    .topbar    { grid-area: topbar;    background: #1d1b20; color: #fff; padding-inline: var(--sp-4); display: flex; align-items: center; }
+    .bottomnav { grid-area: bottomnav; background: #fff; border-top: 1px solid #e0e0e0; display: flex; justify-content: space-around; align-items: center; }
+    .rail, .drawer { display: none; }
+    .body      { grid-area: body; overflow: auto; }
+
+    @media (min-width: 600px) {
+      .app-shell {
+        grid-template-columns: var(--rail-w) 1fr;
+        grid-template-rows: var(--topbar-h) 1fr;
+        grid-template-areas: "rail topbar" "rail body";
+      }
+      .bottomnav { display: none; }
+      .rail      { grid-area: rail; display: flex; flex-direction: column; background: #fff; border-right: 1px solid #e0e0e0; }
+    }
+    @media (min-width: 1200px) {
+      .app-shell {
+        grid-template-columns: var(--drawer-w) 1fr;
+        grid-template-areas: "drawer topbar" "drawer body";
+      }
+      .rail   { display: none; }
+      .drawer { grid-area: drawer; display: flex; flex-direction: column; background: #fff; border-right: 1px solid #e0e0e0; }
+    }
+
+    /* List-Detail canonical layout */
+    .list  { background: #fff; border-radius: 12px; padding: var(--sp-4); }
+    .detail{ background: #fff; border-radius: 12px; padding: var(--sp-6); }
+    .pane--list, .pane--detail { grid-column: 1 / -1; }
+
+    @media (min-width: 840px) {
+      .pane--list   { grid-column: span 4; position: sticky; top: var(--sp-4); align-self: start; }
+      .pane--detail { grid-column: span 8; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">List-Detail demo</header>
+
+    <nav class="rail"   aria-label="Primary">Rail</nav>
+    <nav class="drawer" aria-label="Primary">Drawer</nav>
+    <nav class="bottomnav" aria-label="Primary">Bottom</nav>
+
+    <main class="body">
+      <div class="m3-grid" style="padding-block: var(--sp-4);">
+        <section class="pane pane--list">
+          <h2>Inbox</h2>
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ul>
+        </section>
+        <section class="pane pane--detail">
+          <h2>Selected item</h2>
+          <p>Detail content. At compact this is shown on its own route; at ≥ 840 px it sits next to the list.</p>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

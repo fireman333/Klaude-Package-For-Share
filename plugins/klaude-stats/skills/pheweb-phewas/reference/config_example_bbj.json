@@ -1,0 +1,739 @@
+{
+ "cohort": "BioBank Japan (PheWeb.jp)",
+ "site": "https://pheweb.jp",
+ "population": "Japanese ancestry, ~260,000 BioBank Japan participants",
+ "retrieved": "2026-08-07",
+ "build": "GRCh37 / hg19",
+ "p_cut": 5e-08,
+ "p_cut_label": "5e-8",
+ "header_colour": "C00000",
+ "snps": [
+  "rs11207982",
+  "rs13397297",
+  "rs17026651",
+  "rs9995159",
+  "rs113012699",
+  "rs112784971",
+  "rs12546317",
+  "rs7466988",
+  "rs310864",
+  "rs3783113",
+  "rs111789331"
+ ],
+ "domains": [
+  "1. Coronary artery disease / MI / angina",
+  "2. Heart failure",
+  "3. Arrhythmia / AF / flutter",
+  "4. Stroke / intracranial haemorrhage",
+  "5. Diabetes mellitus / glycaemia",
+  "6. Hypertension / blood pressure",
+  "7. Dyslipidaemia / lipids / statins",
+  "8. BMI / height / weight",
+  "9. Peripheral artery disease"
+ ],
+ "groups": {
+  "CAD": [
+   "Coronary artery disease",
+   "1. Coronary artery disease / MI / angina",
+   "direct"
+  ],
+  "CAD_GxE": [
+   "Coronary artery disease",
+   "1. Coronary artery disease / MI / angina",
+   "direct"
+  ],
+  "MI": [
+   "Myocardial infarction",
+   "1. Coronary artery disease / MI / angina",
+   "direct"
+  ],
+  "Angina": [
+   "Angina pectoris (stable / unstable)",
+   "1. Coronary artery disease / MI / angina",
+   "direct"
+  ],
+  "SAP": [
+   "Angina pectoris (stable / unstable)",
+   "1. Coronary artery disease / MI / angina",
+   "direct"
+  ],
+  "UAP": [
+   "Angina pectoris (stable / unstable)",
+   "1. Coronary artery disease / MI / angina",
+   "direct"
+  ],
+  "CHF": [
+   "Chronic heart failure",
+   "2. Heart failure",
+   "direct"
+  ],
+  "Atrial_Flutter": [
+   "Atrial flutter / fibrillation",
+   "3. Arrhythmia / AF / flutter",
+   "direct"
+  ],
+  "Ventricular_Arrhythmia": [
+   "Ventricular arrhythmia",
+   "3. Arrhythmia / AF / flutter",
+   "direct"
+  ],
+  "Arrhythmia_GxE": [
+   "Arrhythmia (gene-environment interaction test)",
+   "3. Arrhythmia / AF / flutter",
+   "borderline — advisor to confirm"
+  ],
+  "IS": [
+   "Ischemic stroke",
+   "4. Stroke / intracranial haemorrhage",
+   "direct"
+  ],
+  "Stroke_GxE": [
+   "Ischemic stroke",
+   "4. Stroke / intracranial haemorrhage",
+   "direct"
+  ],
+  "Intracerebral_Hemorrhage": [
+   "Intracerebral haemorrhage",
+   "4. Stroke / intracranial haemorrhage",
+   "direct"
+  ],
+  "Subarachnoid_Hemorrhage": [
+   "Subarachnoid haemorrhage",
+   "4. Stroke / intracranial haemorrhage",
+   "direct"
+  ],
+  "T1D": [
+   "Type 1 diabetes",
+   "5. Diabetes mellitus / glycaemia",
+   "direct"
+  ],
+  "T2D": [
+   "Type 2 diabetes (BBJ + Suzuki2024 ancestry meta-analyses)",
+   "5. Diabetes mellitus / glycaemia",
+   "direct"
+  ],
+  "T2D_GxE": [
+   "Type 2 diabetes (BBJ + Suzuki2024 ancestry meta-analyses)",
+   "5. Diabetes mellitus / glycaemia",
+   "direct"
+  ],
+  "T2D_AFA_Suzuki2024": [
+   "Type 2 diabetes (BBJ + Suzuki2024 ancestry meta-analyses)",
+   "5. Diabetes mellitus / glycaemia",
+   "direct"
+  ],
+  "T2D_EAS_Suzuki2024": [
+   "Type 2 diabetes (BBJ + Suzuki2024 ancestry meta-analyses)",
+   "5. Diabetes mellitus / glycaemia",
+   "direct"
+  ],
+  "T2D_EUR_Suzuki2024": [
+   "Type 2 diabetes (BBJ + Suzuki2024 ancestry meta-analyses)",
+   "5. Diabetes mellitus / glycaemia",
+   "direct"
+  ],
+  "T2D_HIS_Suzuki2024": [
+   "Type 2 diabetes (BBJ + Suzuki2024 ancestry meta-analyses)",
+   "5. Diabetes mellitus / glycaemia",
+   "direct"
+  ],
+  "T2D_SAS_Suzuki2024": [
+   "Type 2 diabetes (BBJ + Suzuki2024 ancestry meta-analyses)",
+   "5. Diabetes mellitus / glycaemia",
+   "direct"
+  ],
+  "T2D_MultiAncestry_Suzuki2024": [
+   "Type 2 diabetes (BBJ + Suzuki2024 ancestry meta-analyses)",
+   "5. Diabetes mellitus / glycaemia",
+   "direct"
+  ],
+  "Glucose": [
+   "Glucose (blood sugar)",
+   "5. Diabetes mellitus / glycaemia",
+   "direct"
+  ],
+  "BS_GxE": [
+   "Glucose (blood sugar)",
+   "5. Diabetes mellitus / glycaemia",
+   "direct"
+  ],
+  "HbA1c": [
+   "HbA1c",
+   "5. Diabetes mellitus / glycaemia",
+   "direct"
+  ],
+  "HbA1c_GxE": [
+   "HbA1c",
+   "5. Diabetes mellitus / glycaemia",
+   "direct"
+  ],
+  "ATC_A10": [
+   "Drugs used in diabetes (ATC A10)",
+   "5. Diabetes mellitus / glycaemia",
+   "direct"
+  ],
+  "DM_Nephropathy": [
+   "Diabetic nephropathy",
+   "5. Diabetes mellitus / glycaemia",
+   "borderline — advisor to confirm"
+  ],
+  "SBP": [
+   "Systolic blood pressure",
+   "6. Hypertension / blood pressure",
+   "direct"
+  ],
+  "SBP_GxE": [
+   "Systolic blood pressure",
+   "6. Hypertension / blood pressure",
+   "direct"
+  ],
+  "DBP": [
+   "Diastolic blood pressure",
+   "6. Hypertension / blood pressure",
+   "direct"
+  ],
+  "DBP_GxE": [
+   "Diastolic blood pressure",
+   "6. Hypertension / blood pressure",
+   "direct"
+  ],
+  "PP": [
+   "Pulse pressure",
+   "6. Hypertension / blood pressure",
+   "direct"
+  ],
+  "PP_GxE": [
+   "Pulse pressure",
+   "6. Hypertension / blood pressure",
+   "direct"
+  ],
+  "MAP": [
+   "Mean arterial pressure",
+   "6. Hypertension / blood pressure",
+   "direct"
+  ],
+  "MAP_GxE": [
+   "Mean arterial pressure",
+   "6. Hypertension / blood pressure",
+   "direct"
+  ],
+  "ATC_C02": [
+   "Antihypertensive medication (ATC C02 / C03 / C07 / C08 / C09)",
+   "6. Hypertension / blood pressure",
+   "direct"
+  ],
+  "ATC_C09": [
+   "Antihypertensive medication (ATC C02 / C03 / C07 / C08 / C09)",
+   "6. Hypertension / blood pressure",
+   "direct"
+  ],
+  "ATC_C07": [
+   "Antihypertensive medication (ATC C02 / C03 / C07 / C08 / C09)",
+   "6. Hypertension / blood pressure",
+   "direct"
+  ],
+  "ATC_C08": [
+   "Antihypertensive medication (ATC C02 / C03 / C07 / C08 / C09)",
+   "6. Hypertension / blood pressure",
+   "direct"
+  ],
+  "ATC_C03": [
+   "Antihypertensive medication (ATC C02 / C03 / C07 / C08 / C09)",
+   "6. Hypertension / blood pressure",
+   "direct"
+  ],
+  "LDLC": [
+   "LDL-cholesterol",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "LDLC_GxE": [
+   "LDL-cholesterol",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "HDLC": [
+   "HDL-cholesterol",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "HDLC_GxE": [
+   "HDL-cholesterol",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "TG": [
+   "Triglycerides",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "TG_GxE": [
+   "Triglycerides",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "TC": [
+   "Total cholesterol",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "TC_GxE": [
+   "Total cholesterol",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "Dyslipidemia_GxE": [
+   "Dyslipidaemia (gene-environment interaction test)",
+   "7. Dyslipidaemia / lipids / statins",
+   "borderline — advisor to confirm"
+  ],
+  "ATC_C10AA": [
+   "HMG CoA reductase inhibitors (statin use)",
+   "7. Dyslipidaemia / lipids / statins",
+   "direct"
+  ],
+  "BMI": [
+   "Body mass index",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "BMI_GxE": [
+   "Body mass index",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "BW": [
+   "Body weight",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "Height": [
+   "Height",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "Height_GxE": [
+   "Height",
+   "8. BMI / height / weight",
+   "direct"
+  ],
+  "PAD": [
+   "Peripheral arterial disease",
+   "9. Peripheral artery disease",
+   "direct"
+  ],
+  "CRP": [
+   "C-reactive protein",
+   null,
+   "direct"
+  ],
+  "CRP_GxE": [
+   "C-reactive protein",
+   null,
+   "direct"
+  ],
+  "ALP": [
+   "Alkaline phosphatase",
+   null,
+   "direct"
+  ],
+  "ALP_GxE": [
+   "Alkaline phosphatase",
+   null,
+   "direct"
+  ],
+  "Cholelithiasis": [
+   "Cholelithiasis (gallstones)",
+   null,
+   "direct"
+  ],
+  "P": [
+   "Phosphate",
+   null,
+   "direct"
+  ],
+  "P_GxE": [
+   "Phosphate",
+   null,
+   "direct"
+  ],
+  "WBC": [
+   "White blood cell / differential counts",
+   null,
+   "direct"
+  ],
+  "WBC_GxE": [
+   "White blood cell / differential counts",
+   null,
+   "direct"
+  ],
+  "Neutro": [
+   "White blood cell / differential counts",
+   null,
+   "direct"
+  ],
+  "Neutro_GxE": [
+   "White blood cell / differential counts",
+   null,
+   "direct"
+  ],
+  "Lym": [
+   "White blood cell / differential counts",
+   null,
+   "direct"
+  ],
+  "Lymph_GxE": [
+   "White blood cell / differential counts",
+   null,
+   "direct"
+  ],
+  "Mono": [
+   "White blood cell / differential counts",
+   null,
+   "direct"
+  ],
+  "Mono_GxE": [
+   "White blood cell / differential counts",
+   null,
+   "direct"
+  ],
+  "Eosino": [
+   "White blood cell / differential counts",
+   null,
+   "direct"
+  ],
+  "Eosino_GxE": [
+   "White blood cell / differential counts",
+   null,
+   "direct"
+  ],
+  "Baso": [
+   "White blood cell / differential counts",
+   null,
+   "direct"
+  ],
+  "RBC": [
+   "Red blood cell indices (RBC / haemoglobin / haematocrit / MCV / MCH / MCHC)",
+   null,
+   "direct"
+  ],
+  "RBC_GxE": [
+   "Red blood cell indices (RBC / haemoglobin / haematocrit / MCV / MCH / MCHC)",
+   null,
+   "direct"
+  ],
+  "Hb": [
+   "Red blood cell indices (RBC / haemoglobin / haematocrit / MCV / MCH / MCHC)",
+   null,
+   "direct"
+  ],
+  "Hb_GxE": [
+   "Red blood cell indices (RBC / haemoglobin / haematocrit / MCV / MCH / MCHC)",
+   null,
+   "direct"
+  ],
+  "Ht": [
+   "Red blood cell indices (RBC / haemoglobin / haematocrit / MCV / MCH / MCHC)",
+   null,
+   "direct"
+  ],
+  "Ht_GxE": [
+   "Red blood cell indices (RBC / haemoglobin / haematocrit / MCV / MCH / MCHC)",
+   null,
+   "direct"
+  ],
+  "MCV": [
+   "Red blood cell indices (RBC / haemoglobin / haematocrit / MCV / MCH / MCHC)",
+   null,
+   "direct"
+  ],
+  "MCV_GxE": [
+   "Red blood cell indices (RBC / haemoglobin / haematocrit / MCV / MCH / MCHC)",
+   null,
+   "direct"
+  ],
+  "MCH": [
+   "Red blood cell indices (RBC / haemoglobin / haematocrit / MCV / MCH / MCHC)",
+   null,
+   "direct"
+  ],
+  "MCH_GxE": [
+   "Red blood cell indices (RBC / haemoglobin / haematocrit / MCV / MCH / MCHC)",
+   null,
+   "direct"
+  ],
+  "MCHC": [
+   "Red blood cell indices (RBC / haemoglobin / haematocrit / MCV / MCH / MCHC)",
+   null,
+   "direct"
+  ],
+  "MCHC_GxE": [
+   "Red blood cell indices (RBC / haemoglobin / haematocrit / MCV / MCH / MCHC)",
+   null,
+   "direct"
+  ],
+  "GaC": [
+   "Gastric cancer",
+   null,
+   "direct"
+  ],
+  "TP": [
+   "Serum proteins (total / non-albumin / albumin / A-G ratio)",
+   null,
+   "direct"
+  ],
+  "TP_GxE": [
+   "Serum proteins (total / non-albumin / albumin / A-G ratio)",
+   null,
+   "direct"
+  ],
+  "NAP": [
+   "Serum proteins (total / non-albumin / albumin / A-G ratio)",
+   null,
+   "direct"
+  ],
+  "AG": [
+   "Serum proteins (total / non-albumin / albumin / A-G ratio)",
+   null,
+   "direct"
+  ],
+  "Alb": [
+   "Serum proteins (total / non-albumin / albumin / A-G ratio)",
+   null,
+   "direct"
+  ],
+  "Alb_GxE": [
+   "Serum proteins (total / non-albumin / albumin / A-G ratio)",
+   null,
+   "direct"
+  ],
+  "sCr": [
+   "Kidney function (creatinine / eGFR / BUN)",
+   null,
+   "direct"
+  ],
+  "sCr_GxE": [
+   "Kidney function (creatinine / eGFR / BUN)",
+   null,
+   "direct"
+  ],
+  "eGFR": [
+   "Kidney function (creatinine / eGFR / BUN)",
+   null,
+   "direct"
+  ],
+  "eGFR_GxE": [
+   "Kidney function (creatinine / eGFR / BUN)",
+   null,
+   "direct"
+  ],
+  "BUN": [
+   "Kidney function (creatinine / eGFR / BUN)",
+   null,
+   "direct"
+  ],
+  "BUN_GxE": [
+   "Kidney function (creatinine / eGFR / BUN)",
+   null,
+   "direct"
+  ],
+  "Allergy_BBJ_Shirai2022": [
+   "Allergy / autoimmune multi-trait (Shirai2022)",
+   null,
+   "direct"
+  ],
+  "Allergy_UKB_Shirai2022": [
+   "Allergy / autoimmune multi-trait (Shirai2022)",
+   null,
+   "direct"
+  ],
+  "Allergy_BBJ_UKB_Shirai2022": [
+   "Allergy / autoimmune multi-trait (Shirai2022)",
+   null,
+   "direct"
+  ],
+  "Autoimmune_BBJ_Shirai2022": [
+   "Allergy / autoimmune multi-trait (Shirai2022)",
+   null,
+   "direct"
+  ],
+  "Autoimmune_UKB_Shirai2022": [
+   "Allergy / autoimmune multi-trait (Shirai2022)",
+   null,
+   "direct"
+  ],
+  "Autoimmune_BBJ_UKB_Shirai2022": [
+   "Allergy / autoimmune multi-trait (Shirai2022)",
+   null,
+   "direct"
+  ],
+  "Autoimmune_Allergy_BBJ_Shirai2022": [
+   "Allergy / autoimmune multi-trait (Shirai2022)",
+   null,
+   "direct"
+  ],
+  "Autoimmune_Allergy_UKB_Shirai2022": [
+   "Allergy / autoimmune multi-trait (Shirai2022)",
+   null,
+   "direct"
+  ],
+  "Autoimmune_Allergy_BBJ_UKB_Shirai2022": [
+   "Allergy / autoimmune multi-trait (Shirai2022)",
+   null,
+   "direct"
+  ],
+  "Food_Allergy": [
+   "Food allergy",
+   null,
+   "direct"
+  ]
+ },
+ "panel": [
+  [
+   "1. Coronary artery disease / MI / angina",
+   "CAD"
+  ],
+  [
+   "1. Coronary artery disease / MI / angina",
+   "MI"
+  ],
+  [
+   "1. Coronary artery disease / MI / angina",
+   "SAP"
+  ],
+  [
+   "1. Coronary artery disease / MI / angina",
+   "UAP"
+  ],
+  [
+   "1. Coronary artery disease / MI / angina",
+   "Angina"
+  ],
+  [
+   "2. Heart failure",
+   "CHF"
+  ],
+  [
+   "3. Arrhythmia / AF / flutter",
+   "Atrial_Flutter"
+  ],
+  [
+   "3. Arrhythmia / AF / flutter",
+   "Ventricular_Arrhythmia"
+  ],
+  [
+   "3. Arrhythmia / AF / flutter",
+   "Arrhythmia_GxE"
+  ],
+  [
+   "4. Stroke / intracranial haemorrhage",
+   "IS"
+  ],
+  [
+   "4. Stroke / intracranial haemorrhage",
+   "Intracerebral_Hemorrhage"
+  ],
+  [
+   "4. Stroke / intracranial haemorrhage",
+   "Subarachnoid_Hemorrhage"
+  ],
+  [
+   "5. Diabetes mellitus / glycaemia",
+   "T1D"
+  ],
+  [
+   "5. Diabetes mellitus / glycaemia",
+   "T2D"
+  ],
+  [
+   "5. Diabetes mellitus / glycaemia",
+   "Glucose"
+  ],
+  [
+   "5. Diabetes mellitus / glycaemia",
+   "HbA1c"
+  ],
+  [
+   "5. Diabetes mellitus / glycaemia",
+   "ATC_A10"
+  ],
+  [
+   "6. Hypertension / blood pressure",
+   "SBP"
+  ],
+  [
+   "6. Hypertension / blood pressure",
+   "DBP"
+  ],
+  [
+   "6. Hypertension / blood pressure",
+   "PP"
+  ],
+  [
+   "6. Hypertension / blood pressure",
+   "MAP"
+  ],
+  [
+   "6. Hypertension / blood pressure",
+   "ATC_C02"
+  ],
+  [
+   "6. Hypertension / blood pressure",
+   "ATC_C09"
+  ],
+  [
+   "6. Hypertension / blood pressure",
+   "ATC_C07"
+  ],
+  [
+   "6. Hypertension / blood pressure",
+   "ATC_C08"
+  ],
+  [
+   "6. Hypertension / blood pressure",
+   "ATC_C03"
+  ],
+  [
+   "7. Dyslipidaemia / lipids / statins",
+   "LDLC"
+  ],
+  [
+   "7. Dyslipidaemia / lipids / statins",
+   "HDLC"
+  ],
+  [
+   "7. Dyslipidaemia / lipids / statins",
+   "TG"
+  ],
+  [
+   "7. Dyslipidaemia / lipids / statins",
+   "TC"
+  ],
+  [
+   "7. Dyslipidaemia / lipids / statins",
+   "ATC_C10AA"
+  ],
+  [
+   "8. BMI / height / weight",
+   "BMI"
+  ],
+  [
+   "8. BMI / height / weight",
+   "BW"
+  ],
+  [
+   "8. BMI / height / weight",
+   "Height"
+  ],
+  [
+   "9. Peripheral artery disease",
+   "PAD"
+  ]
+ ],
+ "notes": [
+  "All 11 SNPs are present here, including rs17026651 (3:30879358-C-G, nearest gene GADL1), which is absent from the UK Biobank (Neale) PheWeb.",
+  "BioBank Japan carries the quantitative biomarkers the UK Biobank PheWeb release lacks: LDL-cholesterol, HDL-cholesterol, triglycerides, total cholesterol, glucose, HbA1c and BMI are all first-class traits, and 'HMG CoA reductase inhibitors' is a BBJ trait (ATC_C10AA) in its own right.",
+  "Some traits are meta-analyses that include non-Japanese cohorts (Suzuki2024 type 2 diabetes by ancestry, Shirai2022 autoimmune / allergy, Sato2023 cancer). The Citation column distinguishes them from BBJ-only results.",
+  "Traits labelled '(GxE, combination tests across environments)' are gene-environment interaction tests, not main-effect GWAS. They are merged with their parent trait in table b and flagged there."
+ ]
+}

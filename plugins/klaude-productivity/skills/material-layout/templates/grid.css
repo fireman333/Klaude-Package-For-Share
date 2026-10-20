@@ -1,0 +1,71 @@
+/* Responsive 4 / 8 / 12-column grid primitive.
+   Requires tokens.css to be loaded first (for the --sp-* and --bp-* tokens,
+   although this file hardcodes breakpoints for portability).
+
+   Usage:
+     <main class="m3-grid">
+       <section style="grid-column: span 4;">...</section>
+       <aside   style="grid-column: span 8;">...</aside>
+     </main>
+*/
+
+.m3-grid {
+  --grid-cols:   4;
+  --grid-gutter: 16px;
+  --grid-margin: 16px;
+
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+  column-gap: var(--grid-gutter);
+  row-gap:    var(--grid-gutter);
+  padding-inline: var(--grid-margin);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Medium: 600–839px — 8 columns */
+@media (min-width: 600px) {
+  .m3-grid {
+    --grid-cols:   8;
+    --grid-gutter: 24px;
+    --grid-margin: 24px;
+  }
+}
+
+/* Expanded: 840–1199px — 12 columns */
+@media (min-width: 840px) {
+  .m3-grid {
+    --grid-cols:   12;
+    --grid-gutter: 24px;
+    --grid-margin: 24px;
+  }
+}
+
+/* Large: 1200–1599px — wider margins */
+@media (min-width: 1200px) {
+  .m3-grid {
+    --grid-cols:   12;
+    --grid-gutter: 24px;
+    --grid-margin: 32px;
+  }
+}
+
+/* Extra-large: ≥1600px — cap + center */
+@media (min-width: 1600px) {
+  .m3-grid {
+    --grid-cols:   12;
+    --grid-gutter: 24px;
+    --grid-margin: 32px;
+    max-width: 1600px;
+    margin-inline: auto;
+  }
+}
+
+/* Utility span helpers (pick what you need) */
+.m3-span-1  { grid-column: span 1;  }
+.m3-span-2  { grid-column: span 2;  }
+.m3-span-3  { grid-column: span 3;  }
+.m3-span-4  { grid-column: span 4;  }
+.m3-span-6  { grid-column: span 6;  }
+.m3-span-8  { grid-column: span 8;  }
+.m3-span-12 { grid-column: 1 / -1;  }

@@ -1,0 +1,120 @@
+# Titles and kinship terms in Taiwan medical records
+# Used as context for name detection: 姓氏 + title = person name
+# Format: title | role_category
+# role_category: patient | family | doctor | nurse | staff | other
+# One entry per line, tab or pipe-separated
+先生|patient
+小姐|patient
+女士|patient
+太太|family
+先生（病人）|patient
+阿公|patient
+阿嬤|patient
+阿伯|patient
+阿婆|patient
+阿姨|patient
+阿叔|patient
+個案|patient
+病人|patient
+病患|patient
+本案|patient
+案主|patient
+# 家屬
+家屬|family
+母親|family
+父親|family
+爸爸|family
+媽媽|family
+兒子|family
+女兒|family
+長子|family
+次子|family
+長女|family
+次女|family
+兄弟|family
+姊妹|family
+哥哥|family
+姊姊|family
+弟弟|family
+妹妹|family
+丈夫|family
+先生（家屬）|family
+妻子|family
+老公|family
+老婆|family
+配偶|family
+伴侶|family
+個案之母|family
+個案之父|family
+個案之子|family
+個案之女|family
+個案之夫|family
+個案之妻|family
+病人之母|family
+病人之父|family
+病人之子|family
+病人之女|family
+病人之夫|family
+病人之妻|family
+外婆|family
+外公|family
+爺爺|family
+奶奶|family
+# 醫師
+醫師|doctor
+醫生|doctor
+大夫|doctor
+主治|doctor
+主治醫師|doctor
+主任|doctor
+科主任|doctor
+部主任|doctor
+教授|doctor
+副教授|doctor
+助理教授|doctor
+總醫師|doctor
+CR|doctor
+Chief Resident|doctor
+住院醫師|doctor
+R1|doctor
+R2|doctor
+R3|doctor
+R4|doctor
+R5|doctor
+Resident|doctor
+實習醫師|doctor
+Intern|doctor
+Clerk|doctor
+見習醫師|doctor
+PGY|doctor
+主刀|doctor
+第一助手|doctor
+第二助手|doctor
+# 護理人員
+護理師|nurse
+護士|nurse
+NS|nurse
+PN|nurse
+專科護理師|nurse
+NP|nurse
+個管師|nurse
+個案管理師|nurse
+Head Nurse|nurse
+護理長|nurse
+# 其他醫事人員
+藥師|staff
+營養師|staff
+物理治療師|staff
+職能治療師|staff
+語言治療師|staff
+呼吸治療師|staff
+RT|staff
+PT|staff
+OT|staff
+ST|staff
+社工|staff
+社工師|staff
+放射師|staff
+醫檢師|staff
+心理師|staff
+臨床心理師|staff

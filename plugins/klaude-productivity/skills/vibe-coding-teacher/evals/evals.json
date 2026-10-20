@@ -1,0 +1,45 @@
+{
+  "skill_name": "vibe-coding-teacher",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "幫我解釋這個專案的程式架構，我完全看不懂這些檔案在幹嘛",
+      "expected_output": "A beginner-friendly explanation of a small example web project's architecture in Traditional Chinese with English technical terms, covering file structure, how components connect, and key concepts",
+      "files": [],
+      "assertions": [
+        {"text": "Response is primarily in Traditional Chinese", "type": "qualitative"},
+        {"text": "Technical terms (commit, branch, component, etc.) are kept in English", "type": "qualitative"},
+        {"text": "Includes a file structure overview", "type": "qualitative"},
+        {"text": "Explains how frontend and backend connect", "type": "qualitative"},
+        {"text": "Uses beginner-friendly language without being condescending", "type": "qualitative"}
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "教我怎麼用 git 把這個專案推上 GitHub，我從來沒用過 git",
+      "expected_output": "Step-by-step git tutorial in Traditional Chinese, using the actual project context, teaching from git init through git push, with explanations of each command",
+      "files": [],
+      "assertions": [
+        {"text": "Response is primarily in Traditional Chinese", "type": "qualitative"},
+        {"text": "Provides actual git commands in code blocks", "type": "qualitative"},
+        {"text": "Explains what each command does in plain language", "type": "qualitative"},
+        {"text": "References the actual project in the current directory", "type": "qualitative"},
+        {"text": "Covers the full flow: init → add → commit → remote → push", "type": "qualitative"}
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "我要推上 GitHub 了，幫我做資安檢查，確保沒有敏感資料會被公開",
+      "expected_output": "A security audit report in Traditional Chinese checking for API keys, passwords, .env files, personal data, and medical data, with a clear pass/fail table",
+      "files": [],
+      "assertions": [
+        {"text": "Response is primarily in Traditional Chinese", "type": "qualitative"},
+        {"text": "Checks .gitignore for completeness", "type": "qualitative"},
+        {"text": "Scans for API keys, passwords, and tokens", "type": "qualitative"},
+        {"text": "Checks for personal/medical data patterns", "type": "qualitative"},
+        {"text": "Provides a clear summary table with pass/fail status", "type": "qualitative"},
+        {"text": "Includes remediation steps if issues found", "type": "qualitative"}
+      ]
+    }
+  ]
+}

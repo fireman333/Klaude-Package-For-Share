@@ -1,0 +1,17 @@
+{
+  "_comment": "Lancet palette — anchored on the Lancet's signature red, plus muted blues and grays. Preserves the journal's editorial visual identity.",
+  "lancet_red":        "#A41E22",
+  "lancet_red_l":      "#D88489",
+  "lancet_red_d":      "#7A1518",
+  "lancet_blue":       "#2C5282",
+  "lancet_blue_l":     "#7AA2C0",
+  "lancet_orange":     "#D86A1F",
+  "lancet_green":      "#3F7A4A",
+  "lancet_purple":     "#5C4A82",
+  "lancet_gray_dark":  "#4A4A4A",
+  "gray_1":            "#EAEAEA",
+  "gray_2":            "#9C9C9C",
+  "gray_3":            "#5A5A5A",
+  "black":             "#000000",
+  "white":             "#FFFFFF"
+}

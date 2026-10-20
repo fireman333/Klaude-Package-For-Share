@@ -1,0 +1,16 @@
+{
+  "_comment": "JAMA palette — clinical-formal, slightly more saturated than Nature. Navy is a recurring cornerstone in JAMA Network figures.",
+  "navy_main":   "#1F3A93",
+  "navy_dark":   "#152B6E",
+  "navy_light":  "#5C7AC4",
+  "teal_main":   "#0F8B8D",
+  "teal_light":  "#7FBFC0",
+  "red_jama":    "#C0392B",
+  "red_light":   "#E6A8A0",
+  "gold_main":   "#D4A017",
+  "gray_1":      "#F2F2F2",
+  "gray_2":      "#A6A6A6",
+  "gray_3":      "#595959",
+  "black":       "#000000",
+  "white":       "#FFFFFF"
+}

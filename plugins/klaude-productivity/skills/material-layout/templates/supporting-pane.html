@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>M3 canonical layout — Supporting Pane</title>
+  <link rel="stylesheet" href="./tokens.css" />
+  <link rel="stylesheet" href="./grid.css" />
+  <style>
+    body { margin: 0; font-family: system-ui, sans-serif; background: #fafafa; }
+    .topbar  { height: var(--topbar-h); background: #1d1b20; color: #fff; display: flex; align-items: center; padding-inline: var(--sp-4); }
+    .body    { padding-block: var(--sp-4); }
+    .primary    { background: #fff; border-radius: 12px; padding: var(--sp-6); min-height: 60vh; }
+    .supporting { background: #fff; border-radius: 12px; padding: var(--sp-4); }
+
+    /* Compact: stack, supporting below — at compact prefer a sheet/tab instead */
+    .pane--primary, .pane--supporting { grid-column: 1 / -1; }
+
+    /* Expanded+: primary 2/3, supporting 1/3 */
+    @media (min-width: 840px) {
+      .pane--primary    { grid-column: span 8; }
+      .pane--supporting { grid-column: span 4; position: sticky; top: var(--sp-4); align-self: start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">Supporting-Pane demo</header>
+
+  <main class="body m3-grid">
+    <section class="pane pane--primary primary">
+      <h1>Primary work surface</h1>
+      <p>Editor / dashboard / form lives here. Takes ~2/3 of the body at ≥ 840 px.</p>
+    </section>
+    <aside class="pane pane--supporting supporting" aria-label="Supporting pane">
+      <h2>Tools &amp; context</h2>
+      <p>Filters, inspector, history, help. On compact, collapse this into a bottom sheet.</p>
+    </aside>
+  </main>
+</body>
+</html>

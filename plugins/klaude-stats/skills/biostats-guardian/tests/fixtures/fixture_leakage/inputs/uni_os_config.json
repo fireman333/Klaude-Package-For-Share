@@ -1,0 +1,11 @@
+{
+  "skill": "univariate-forest",
+  "step_id": "uni_os",
+  "data_file": "data.xlsx",
+  "outcome": {"type": "time-to-event", "time_col": "follow_up_years", "event_col": "death"},
+  "covariates": [
+    {"column": "age", "type": "continuous"},
+    {"column": "lab_day30", "type": "continuous"}
+  ],
+  "output_file": "Uni_OS.xlsx"
+}

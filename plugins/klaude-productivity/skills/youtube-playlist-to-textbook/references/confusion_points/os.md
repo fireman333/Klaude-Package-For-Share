@@ -1,0 +1,5 @@
+- **Kernel ≠ OS**：讀者可能把整個 OS 當黑盒子，要明講 kernel（核心）只管 process／memory／I/O 排程，shell/GUI 是 userspace。
+- **Process vs Thread**：交班（handoff）=process（獨立資源），會診（consultation）=thread（共享上下文）。別反過來用。
+- **虛擬記憶體（virtual memory）**：醫師不會主動管病歷存哪台硬碟，但 OS 分頁（paging）機制要教得像「PACS 影像的 cache hierarchy」。
+- **Deadlock 的 4 條件**：不要背，用「急診室兩個醫師都在等對方寫完病歷才能收治」這類情境感受。
+- **Context switch cost**：學生容易低估切換成本。類比：每次換病人查房都要重看病歷，累加起來不得了。

@@ -1,0 +1,5 @@
+- **對稱（symmetric）vs 非對稱（asymmetric）加密**：類比：對稱=同一把門禁卡開門+鎖門；非對稱=公鑰發出去讓人寄信進來，只有私鑰能打開。
+- **Hash ≠ Encryption**：hash 是單向（one-way），無法反推；加密是可逆。病歷指紋（hash）vs 病歷加密傳輸（encryption）不一樣。
+- **Digital signature 的方向**：是用**私鑰簽、公鑰驗**，跟加密方向相反。容易搞錯。
+- **Random ≠ Pseudorandom**：臨床研究的 random allocation 理想上是真隨機，但電腦給的是 PRG（pseudorandom generator）偽隨機，有 seed、可重現。寫作時要說明為什麼這對密碼學仍安全。
+- **Collision resistance** 不是「絕對不會撞」，是「找到撞的成本高到不可行」。類比：兩個病人身分證號碼相同的機率不是 0，但在可預見時間內不會發生。

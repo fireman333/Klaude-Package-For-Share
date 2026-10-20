@@ -1,0 +1,5 @@
+- **O(n)／Θ(n)／Ω(n) 混用**：醫學背景讀者容易把 big-O 當成精確值。寫作時要說明 O 是上界、Θ 是緊界、Ω 是下界，並用「最壞情況下不會超過 cn」這種實體語言。
+- **「最壞」vs「平均」vs「攤銷」**：臨床資料分布偏斜很常見，攤銷分析（amortized analysis）最容易被誤解為「平均就好」。要明講：攤銷保證**任一序列**不會超過總預算，不是機率平均。
+- **分治遞迴（divide & conquer）的 T(n) 推導**：醫學生熟歸納法，但容易跳過 Master Theorem 的三種 case 判斷。建議每個範例都明講「a=?, b=?, f(n)=?」再套公式。
+- **Randomized 不等於不可靠**：讀者本能覺得「隨機化」=「不嚴謹」。要強調：期望值分析 + 高機率 bound 反而比 worst-case 更實用，類似臨床試驗的 expected outcome。
+- **NP-complete ≠ 無解**：臨床見「無法診斷」就放棄，但 NP-hard 的正確反應是找 approximation／FPT／heuristic，不是停手。

@@ -1,0 +1,13 @@
+{
+  "role": "column",
+  "skill": "kaplan-meier",
+  "step_id": "km_os",
+  "min_status": "block",
+  "must_include": [
+    {
+      "check_id": "COL-002",
+      "severity": "block",
+      "explanation": "event_col death_status has 4 unique values {0,1,2,9}, not binary; KM requires binary 0/1."
+    }
+  ]
+}

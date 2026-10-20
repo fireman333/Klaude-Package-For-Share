@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "academic-style"
+version = "0.1.0"
+description = "Apply Nature/JAMA/NEJM/Lancet figure & table style to biostats outputs."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "fireman333" }]
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib>=3.7",
+    "pyyaml>=6.0",
+    "pydantic>=2.0",
+    "pillow>=10.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "imagehash>=4.3"]
+
+[project.scripts]
+academic-style-cheatsheet = "academic_style.scripts.cheatsheet:main"
+academic-style-validate = "academic_style.scripts.validate_spec:main"
+academic-style-rewrite = "academic_style.scripts.rewrite:main"
+academic-style-draft = "academic_style.scripts.draft:main"
+
+[tool.setuptools]
+packages = ["academic_style", "academic_style.core", "academic_style.scripts"]
+
+[tool.setuptools.package-dir]
+"academic_style" = "."
+"academic_style.core" = "core"
+"academic_style.scripts" = "scripts"
+
+[tool.setuptools.package-data]
+"academic_style" = ["journals/**/*.yaml", "journals/**/*.json", "journals/**/*.md"]

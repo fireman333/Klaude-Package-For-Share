@@ -1,0 +1,85 @@
+# PROJECT_STATE.yaml —— 這個專案「現在是什麼狀態」的機器可讀單一來源
+#
+# 用途：接手的人不必讀完 CLAUDE.md 才知道現在能不能信任文件裡的數字。
+# 維護規則：
+#   1. 只記「會讓結論失效」的狀態，不記敘事。長篇說明留在 CLAUDE.md 與 report/。
+#   2. input_hash 是防呆核心——資料檔換了但沒重跑，這裡就對不上。
+#   3. 本檔不自動更新。改動 pipeline 或資料後手動更新，再跑看門狗確認。
+#   4. **只放手工欄位，不放任何程式算得出來的東西。** 這裡原本抄了一份看門狗結果
+#      （watchdog.last_result）與未結案發現數（verification.open_findings），兩者都
+#      沒有同步機制，只會愈抄愈舊——一個以防止 drift 為目的的檔案自己帶了兩個 drift
+#      來源。已移除：要那兩個數字就當場跑看門狗，它讀的是即時狀態。
+
+project: <專案名稱>
+protocol: <IRB / protocol 編號，沒有就寫 n/a>
+updated: <YYYY-MM-DD>
+
+# ── 現在在回答什麼問題（estimand）─────────────────────────────────────────────
+# 寫清楚才能判斷「這個分析還算不算在回答原本的問題」。
+estimand:
+  aim1:
+    question: <一句話>
+    target: <被估計的量：HR？風險差？交互作用項？>
+    cohort: <世代定義與 n>
+    outcome: <終點定義>
+    adjustment: [<校正變項>]
+    multiplicity: <有沒有多重比較校正，用什麼>
+    headline: <目前的主要結果，含 CI 與 p>
+    status: active
+
+# ── 輸入資料指紋（換檔沒重跑會在這裡對不上）──────────────────────────────────
+inputs:
+  raw:
+    path: <原始資料檔>
+    version: <版本／日期>
+    sha256: <shasum -a 256 的輸出>
+    note: <讀取時的坑，例如表頭在第幾列>
+  analysis_dataset:
+    path: <分析用資料集>
+    sha256: <...>
+    generated_by: <哪支腳本>
+    note: 病人層級資料，已列入 .gitignore，不進版本控制
+
+# ── 環境 ─────────────────────────────────────────────────────────────────────
+environment:
+  python: <版本>
+  platform: <OS / arch>
+  lockfile: requirements-lock.txt
+  external_tools: {}          # 例如 pandoc: 3.9.0.2
+  seeds: {}                   # 每支有隨機性的腳本各自的 seed
+
+# ── 最近一次全量重跑 ─────────────────────────────────────────────────────────
+last_full_run:
+  date: <YYYY-MM-DD>
+  scripts: <範圍>
+  wall_clock_min: <約略>
+  note: <其後有沒有單支重跑>
+
+# ── 看門狗 ───────────────────────────────────────────────────────────────────
+watchdog:
+  command: python3 <RESEARCH_PLAN_DIR>/assets/check_freshness.py .
+  config: research-checks.yaml
+  rule: 非零 exit 代表文件裡的數字不可信，先處理再說
+  # 沒有 last_result 欄位是刻意的（見檔頭規則 4）。上次結果請當場跑上面那行指令。
+
+# ── 驗收 ─────────────────────────────────────────────────────────────────────
+verification:
+  report: <驗收報告路徑>
+  register: <findings register 路徑>   # status 欄為唯一真值來源
+  # 沒有 open_findings 欄位是刻意的（見檔頭規則 4）：register 的 status 欄已經是
+  # 唯一真值來源，在這裡再抄一個數字只會跟它對不上。看門狗 C4 會即時算。
+  caveats:
+    - <核對層級的限制，例如「文獻只核對到 lit_*.md 這一層，未回原文」>
+
+# ── 還沒做的事 ───────────────────────────────────────────────────────────────
+open_items:
+  - id: OI-1
+    what: <一句話>
+    detail: <為什麼還沒做／怎麼做>
+    blocking_submission: <true/false>
+
+# ── 交出去之前的檢查 ─────────────────────────────────────────────────────────
+before_handing_out:
+  - python3 <RESEARCH_PLAN_DIR>/assets/check_freshness.py .   # 必須 exit 0
+  - 確認交付文件（docx/pdf）的 mtime 晚於它的 markdown 來源
+  - 對外描述驗收狀態時，附上 verification.caveats

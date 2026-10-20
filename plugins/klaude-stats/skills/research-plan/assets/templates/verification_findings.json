@@ -1,0 +1,40 @@
+{
+ "_說明": "第三方數字驗收的發現登記簿。看門狗 C4 讀這個檔判斷『能不能對外』。修好一項就把 status 改成 fixed，不要刪除紀錄——刪掉就失去『這個問題曾經存在、怎麼修的』的軌跡。",
+ "_status_值": {
+  "open": "尚未處理 —— 預設之下唯一會擋交付的值",
+  "fixed": "已修正（請在 fixed_note 寫改了哪裡，具體到節次或行）",
+  "closed": "同 fixed，用於不是『修正』而是『查證後確認無誤』的結案",
+  "wontfix": "決定不改（請在 fixed_note 寫理由；不擋交付，但它會留在紀錄裡）",
+  "withdrawn": "驗收者自行撤回（判斷有誤）",
+  "n/a": "不適用",
+  "_註": "詞彙表就這六個字，C4 與 C6 共用（結案值 = fixed / closed / wontfix / withdrawn / n/a）。寫別的字（in_progress、pending、resolved、deferred…）算 unknown：**預設不擋**，只會在結果尾端列出來並附建議對應值——既有專案的登記簿早於這張表，一上線就把它們全變紅只會讓人不再跑看門狗。跑 `check_freshness.py <專案> --lint-status` 逐列列出要改什麼；改完再在該檢查加 `strict_status: true`，unknown 才升級為阻擋。"
+ },
+ "_嚴重度": "嚴重 / 中等 / 輕微。哪些會擋交付由 research-checks.yaml 的 C4_open_findings.block_on 決定，預設只擋『嚴重』。",
+ "_驗收怎麼派": [
+  "驗收不自驗：派未參與原分析的 fresh-context agent，一節一隻，彼此不通訊。",
+  "驗收條件除了『逐格核對數值』，一定要加這三題（逐格比對抓不到）：",
+  "  ① 這個分析總共跑了幾個？報告列了幾個？差額在哪、為什麼不列？",
+  "  ② 這個檢定有沒有對照組／另一層／另一個 frame 也該跑？沒跑就不能拿它論證特異性。",
+  "  ③ 專題報告與主報告的涵蓋範圍差在哪？專題通常較完整，差額就是主報告被裁掉的部分。",
+  "報告中出現、但任何輸出檔都找不到的數字 → 要求驗收者自行重算，並附上程式片段。"
+ ],
+ "phase": 1,
+ "verified_report_lines": 0,
+ "verified_date": "<YYYY-MM-DD>",
+ "_一筆發現的欄位長這樣": {
+  "id": "V1-01",
+  "section": "<節次>",
+  "report_line": 0,
+  "stage": "stats | document —— 省略時視為 stats。C6 只擋 stats 階段的，C4 兩種都擋",
+  "severity": "嚴重",
+  "type": "數值錯誤 / 選擇性呈現 / 統計措辭 / 無來源可查 / 分母未揭露 / 報告內部自相矛盾",
+  "summary": "<一句話講清楚問題是什麼>",
+  "source": "<真值來源：哪個檔的哪個 key，或『驗收者重算』>",
+  "fix": "<具體怎麼改；若同一句被複製到摘要或賣點表，一併列出>",
+  "fixed_note": "<結案時填：改了哪裡（fixed）或為什麼不改（wontfix）>",
+  "needs_rerun": false,
+  "status": "open"
+ },
+ "_為什麼 findings 是空的": "範本以前在這裡放了一筆 status=open + severity=嚴重 的示範，而 SKILL.md 要你直接 cp 過去 —— 照抄不改的專案第一次跑看門狗就被 C4 擋住，理由是一筆不存在的發現。欄位長相看上面那個 key，這裡保持空的。",
+ "findings": []
+}

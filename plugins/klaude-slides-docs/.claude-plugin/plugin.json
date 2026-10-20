@@ -1,0 +1,10 @@
+{
+  "name": "klaude-slides-docs",
+  "description": "簡報與文件：病例討論 / 書報討論投影片、pptx 視覺檢查、講稿 handout、Markdown→PDF、PDF 拆分與精準問答",
+  "version": "1.0.0",
+  "author": {
+    "name": "fireman333"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/fireman333/Klaude-Package-For-Share"
+}

@@ -1,0 +1,165 @@
+# research-checks.yaml —— 看門狗設定（放在專案根目錄）
+#
+# 跑法：  python3 <RESEARCH_PLAN_DIR>/assets/check_freshness.py .
+# 只留需要的檢查；不適用的整個刪掉或設 false。**沒有這個檔 = 專案未受保護**，
+# 看門狗會回 exit 2 而不是假裝通過。
+#
+# 路徑一律相對於專案根目錄。
+
+project: <專案名稱>
+
+checks:
+
+  # C1 每個機器產生的 stats 檔，是否比「它的產生腳本」與「資料集」都新
+  #    需要 stats_index（記錄每個 stats 檔由哪支腳本產生）。沒有編號腳本的專案可關掉。
+  C1_stats_freshness:
+    stats_index: analysis/data/stats_index.json
+    dataset: analysis/data/analysis_cohort.csv
+    data_dir: analysis/data
+    scripts_dir: analysis/scripts
+
+  # C2 決策紀錄的「要改就改這裡」欄位是否還指得到存在的腳本與符號
+  #    ⚠️ 解析的是每列的**最後一欄**。決策紀錄要加新欄位（例如狀態欄）務必插在最後一欄之前。
+  C2_decision_log_pointers:
+    file: analysis/report/decision_log.md
+    scripts_dir: analysis/scripts
+
+  # C3 驗收報告聲稱涵蓋的版本 vs 被驗文件現在的長度
+  #    驗收報告裡要有「<數字> 行版本」字樣，取第一個出現的。
+  #    verification 指向 .json 時（例如把行數記在登記簿裡而不是 md），行數從
+  #    `register_field` 欄位讀，預設 verified_report_lines；指向 .md 時忽略這個鍵。
+  C3_verification_coverage:
+    verification: analysis/report/VERIFICATION.md
+    document: analysis/report/RESEARCH_REPORT.md
+    tolerance: 1.02          # 容許 2% 成長（排版微調不算未驗）
+    # register_field: verified_report_lines   # 只有 verification 指向 .json 時才用
+
+  # C4 驗收發現登記簿裡還有沒有未結案的阻擋級項目
+  #    block_on 列出哪些嚴重度會擋交付；其餘只提醒。
+  #    status 詞彙（C4 與 C6 共用）：`open` 擋；`fixed` / `closed` / `wontfix` /
+  #    `withdrawn` / `n/a` 算結案；其他字（resolved、accepted、in_progress…）算
+  #    unknown —— **預設只提醒不擋**，並在結果尾端附建議對應值。
+  #    strict_status: true → unknown 也擋。新專案直接開（沒有歷史包袱）；既有專案
+  #    先跑 `check_freshness.py . --lint-status` 逐列遷移完再開。
+  #    highwater：登記簿的 id 高水位檔，放在登記簿旁邊、登記簿之外。每個 id 前綴的
+  #    最大號只能長不能縮，被記成阻擋級的 id 只能增不能減——刪掉尾端的紀錄或把嚴重度
+  #    往下改都會在這裡被抓到。省略時預設 `<register 同目錄>/findings_id_highwater.json`。
+  #    severity_vocab：本專案認得的嚴重度詞彙。**看門狗讀不懂的嚴重度不算「不嚴重」**，
+  #    會被報出來（"Severe "、"sever" 這種以前會靜默落到不擋那邊）。省略時用內建詞彙
+  #    表（嚴重／中等／輕微／severe／moderate／minor／critical／major／high／medium／
+  #    low／info）；`block_on` 裡的值永遠算在白名單內。只有專案自創嚴重度詞才需要寫。
+  C4_open_findings:
+    register: analysis/data/verification_findings.json
+    block_on: [嚴重]
+    strict_status: true
+    # highwater: analysis/data/findings_id_highwater.json
+    # severity_vocab: [嚴重, 中等, 輕微]
+
+  # C5 文件是否比它引用的 stats 檔新
+  #    抓「文字寫在最後一次重跑之前、沒有回頭對照」的情形。
+  #    路徑省略時沿用 C1 的 stats_index / data_dir。
+  C5_document_vs_stats:
+    document: analysis/report/RESEARCH_REPORT.md
+
+  # C6 統計輸出有沒有被獨立驗收過，而且驗收發生在最後一次重跑之後
+  #    ⚠️ 這是唯一把**統計輸出的內容 SHA-256** 對上驗收紀錄的檢查（C7 另外會比對 coverage
+  #       報告裡記下的輸出檔 hash）。C1 / C1b / C5 全部只比 mtime，
+  #       一個 touch 就騙得過；C6 是「這批數字真的是被驗過的那批」的唯一證據。
+  #       範本以前漏了這一段，而 enabled() 的規則是「YAML 沒列 = 關」——
+  #       所以照抄範本的專案，C6 從來沒有啟用過。
+  #
+  #    `record` 指向統計驗收紀錄（Step 7.5 的驗收者寫），至少要有：
+  #      {"verdict": "pass",                       // 不是 pass/通過 一律擋
+  #       "verified_artifacts": {                  // 沒有 hash 一律不採信
+  #         "table1_stats.json": "<sha256>", ... }}
+  #    register / stats_index / data_dir 省略時沿用 C4 / C1 的設定。
+  #    還沒做過統計驗收之前 C6 會擋——這是刻意的，不是設定錯誤。
+  C6_stats_gate:
+    record: analysis/data/stats_verification.json
+    block_on: [嚴重]
+    strict_status: true      # 同 C4：新專案直接開，既有專案先 --lint-status 遷移
+
+  # C7 跑過但沒進交付物的估計，有沒有逐一寫下不列的理由
+  #    C1–C6 問的都是「已經寫下來的數字對不對」，沒有一項問「什麼被省略了」——
+  #    而選擇性呈現正是這個 domain 最常見的失效（delivery_discipline.md：543 個
+  #    數值只有 9 個算錯，九項嚴重發現卻有三項是「跑六個只列兩個」）。
+  #
+  #    `report` 由 estimate_inventory.py 產生（跑完 pipeline 後）：
+  #      python3 <RESEARCH_PLAN_DIR>/scripts/estimate_inventory.py <OUTPUT_DIR>
+  #    `reasons` 是人寫的 {"<estimate_id>": "為什麼不列"}。
+  #    **省略本身不是缺陷，沒有理由的省略才是**——後者與「因為結果不利而拿掉」
+  #    在檔案上無法區分。
+  #    strict: true → 未說明的遺漏擋交付。新專案直接開；既有專案先跑一次看清單、
+  #    把理由補完再開（同 C4 / C6 的 warn → strict 遷移節奏）。
+  C7_coverage:
+    report: analysis/outputs/coverage_diff.json
+    reasons: analysis/report/omission_reasons.json
+    strict: true
+
+  # C8 交付物裡的每個數字，在它自己宣告的 stats 來源裡找不找得到
+  #    C1–C7 比的都是檔案與檔案（誰比誰新、誰有沒有被涵蓋），沒有一項真的去讀文件
+  #    裡的那個數字，所以規則 1「數字單一來源」一直沒有閘。實際代價：0813 AF 交給
+  #    老師的 docx 裡「313 筆」是手打的錯值（登記簿當時是 315），七項檢查全部亮綠。
+  #
+  #    判斷邏輯在 lint_bare_numbers.py，它讀的就是這份 yaml 的這一段：
+  #      python3 <RESEARCH_PLAN_DIR>/assets/lint_bare_numbers.py .
+  #    document 省略時沿用 C5 的 document —— 但**整項不可以寫成 `{}`**，空設定會被
+  #    當成「無法進行」（exit 2）。要沿用 C5 就至少留下 report: 這一行，讓它是刻意的。
+  #
+  #    ⚠️ 通過只代表「沒有明顯的無來源數字」，不代表數字都用對了：比對的是「這個值
+  #       在來源池裡存不存在」，池子越寬越容易撞號。所以要逐文件宣告 sources（同 C5），
+  #       不要偷懶讓它拿全部 stats 檔當池子。
+  # C8_bare_numbers:
+  #   document:
+  #     - path: analysis/report/RESEARCH_REPORT.md
+  #       sources: [t1_stats.json, km_stats.json]
+  #   data_dir: analysis/data
+  #   stats_index: analysis/data/stats_index.json
+  #   report: analysis/data/bare_number_lint.json
+  #   min_integer: 1000        # 小於這個值的整數當編號放行（預設 1000）
+  #   ignore_patterns: []      # 專案自訂的額外豁免正則
+
+  # C9 絕對句 / 新穎性宣稱有沒有帶檢索範圍限定（交付紀律規則 5）
+  #    「至今沒有研究做過 X」要附：查了哪些資料庫、有無年代限制、命中幾筆、篩了幾筆。
+  #    這條規則到 2026-09-03 為止零工具，而它已經在 production 失效過：
+  #    `Project Lit Rev/PE EKG MLDL` 的 introduction 寫了新穎性宣稱，它自己的 Methods
+  #    卻只記了單一資料庫 85 筆、沒有檢索式也沒有檢索日期，沒有任何東西擋住。
+  #
+  #    判斷邏輯在 lint_absolute_claims.py（吃路徑參數，不讀 yaml，看門狗負責翻譯）：
+  #      python3 <RESEARCH_PLAN_DIR>/assets/lint_absolute_claims.py <目錄>
+  #    整項不可以寫成 `{}` —— 沒有 paths 就沒有要掃的文件，那是 exit 2 不是通過。
+  #
+  #    paths 相對專案根目錄，可給目錄或單一檔案（掃 md / qmd / markdown / txt / docx）。
+  #    scope 決定「檢索範圍證據」可以住在哪：
+  #      file = 必須寫在絕對句自己那個檔；dir（預設）= 同檔 + 同目錄 + 文件指向的
+  #      檢索紀錄檔（Quarto 把 Introduction 與 Methods 拆兩檔就要用這個）；tree = 整棵。
+  #    strict: true → B1/B2 警告（「零命中」與「零篇符合」混寫）也算失敗。
+  # C9_absolute_claims:
+  #   paths: [analysis/report]
+  #   scope: dir
+  #   exclude: []              # 路徑含此字串就跳過，可給多個
+  #   strict: false
+  #   report: analysis/data/absolute_claims_lint.json
+
+  # C10 稿件宣稱的 PRISMA 數字，與磁碟上的篩選 / 全文 / 抽取檔對不對得起來
+  #    PRISMA flow 是系統性回顧唯一把「實際做了什麼」寫成整數的地方，而以前沒有任何
+  #    東西核對那些整數。實例：某 MA 專案 稿件寫 47 筆進全文，04_fulltext/fulltext_decisions.csv
+  #    卻有 185 列——兩輪篩選被拼成一張流程圖。reconcile_prisma.py 寫好後零引用了一陣子，
+  #    這一項就是把它接進閘。
+  #
+  #    判斷邏輯在 reconcile_prisma.py（吃 MA 專案根目錄，不讀 yaml）：
+  #      python3 <RESEARCH_PLAN_DIR>/assets/reconcile_prisma.py <MA 專案根>
+  #    它讀的檔案（全部相對 root）：
+  #      03_screening/*/decisions*.csv      裁定過的題摘篩選
+  #      04_fulltext/*decision*.csv          全文裁定；04_fulltext/ft_exclusions.csv、
+  #      04_fulltext/included.bib、05_extraction/extraction.csv、02_search/*/*records*.tsv
+  #      07_manuscript/*.qmd 與 09_qa/*.md   稿件與 QA 報告裡「宣稱」的 PRISMA 整數
+  #    整項不可以寫成 `{}` —— 沒有 root 就不知道要對帳哪個專案，那是 exit 2 不是通過。
+  #    退出碼：2 = 不是 MA 版面 / 沒有裁定檔 / 稿件無 PRISMA 數字 / 某環節解析不了；
+  #            1 = 有落差、版本混用、或清點到卻從未報告的階段；0 = 每個宣稱都對得上。
+  #
+  #    root 相對本 yaml 所在目錄；本專案自己就是 MA（有 01_protocol/ … 09_qa/）時寫 `.`。
+  #    report 若給，對帳結果整份寫成 JSON（放 .json，不要放 09_qa/*.md，否則會被當成宣稱來源）。
+  # C10_prisma_reconcile:
+  #   root: .
+  #   report: 09_qa/prisma_reconcile.json

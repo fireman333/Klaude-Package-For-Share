@@ -1,0 +1,77 @@
+範例醫院 Discharge Summary
+=========================
+病歷號：A1234567
+住院號：ADM20240315001
+床號：12A-03
+病人姓名：王小明
+身分證字號：A123456789
+聯絡電話：0912-345-678
+地址：臺北市大安區仁愛路四段123號5樓
+
+入院日期：2024-03-15
+出院日期：2024-03-25
+住院天數：10 天
+
+主治醫師：張國榮 教授
+Resident：R2 黃志強
+Primary Nurse：李美麗 NS
+
+=== Admission Diagnosis ===
+1. Acute sigmoid diverticulitis with perforation (Hinchey II)
+2. Hypertension, controlled
+3. Diabetes mellitus type 2, controlled
+
+=== Discharge Diagnosis ===
+1. Sigmoid diverticulitis s/p laparoscopic sigmoidectomy, with primary anastomosis
+2. Hypertension
+3. Diabetes mellitus type 2
+
+=== Admission Course ===
+72 y/o male with HTN × 10 年, DM × 5 年，因 LLQ pain with fever × 3 天 2024-03-15
+由家屬（長子 王大華）陪同至本院急診。CT 顯示 sigmoid diverticulitis with contained
+perforation (Hinchey II)。入院後開始 IV antibiotics（Ceftriaxone + Metronidazole），
+保守觀察 24 小時症狀持續未完全改善，遂於 2024-03-16 (POD#0) 由胸腹外科
+陳文華主任 主刀，執行 laparoscopic sigmoidectomy with primary anastomosis。
+手術時間 3h 15min，術中 EBL 約 150 mL。術後轉入一般病房 (12A-03)。
+
+=== Hospital Course ===
+POD#1 (2024-03-17)：去 NG tube, start sips of water, afebrile
+POD#2 (2024-03-18)：start liquid diet, ambulation QID, 感染科 follow infection
+POD#3 (2024-03-19)：soft diet, pain control adequate with acetaminophen PRN
+POD#4 (2024-03-20)：IV antibiotics switch to PO (cefuroxime + metronidazole)
+POD#5-7 (2024-03-21~23)：regular diet tolerated, bowel function return, wound healing well
+POD#8 (2024-03-24)：remove surgical drain, discharge planning
+POD#9 (2024-03-25)：discharge home
+
+期間 resume metformin（Glucophage） 500 mg PO bid on 2024-03-23, HbA1c 6.8%。
+
+=== Discharge Medication ===
+1. Cefuroxime (Zinnat) 500 mg PO bid × 3 天
+2. Metronidazole 500 mg PO tid × 3 天
+3. Amlodipine (Norvasc) 5 mg PO qd
+4. Metformin (Glucophage) 500 mg PO bid
+5. Glimepiride (Amaryl) 2 mg PO qd（改回術前劑量）
+6. Acetaminophen (Panadol) 500 mg PO q6h PRN for pain
+
+=== Discharge Condition ===
+- Ambulate independently
+- Regular diet tolerate
+- Afebrile × 5 天
+- Wound clean and dry
+
+=== Follow-up Plan ===
+1. 一般外科 OPD 2024-04-01 09:00 with 陳文華 主任（診間：3D-02）
+2. 感染科 OPD 2024-04-08 with 張國榮 教授
+3. 家醫科 OPD 2024-04-15 for DM/HTN follow-up
+
+=== Patient Education ===
+- 傷口照護：保持乾燥，每 2 天換藥一次
+- 若出現以下症狀請立即返診：發燒 > 38.5°C、傷口紅腫化膿、嚴重腹痛、黑便
+- 急診聯絡：範例醫院急診 02-2312-3456
+- 飲食建議：逐步增加高纖維食物（蔬菜、水果、全穀），預防 diverticulitis 復發
+
+家屬聯絡人：王陳美麗太太（病人之妻）0987-654-321
+備用聯絡人：王大華（病人之長子）0912-345-678
+
+Discharge prepared by：R2 黃志強
+日期：2024-03-25

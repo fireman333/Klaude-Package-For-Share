@@ -1,0 +1,142 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Biostats Guardian",
+  "description": "Schema for Biostats Guardian issues, role reports, and aggregated guardian reports.",
+
+  "definitions": {
+
+    "Role": {
+      "type": "string",
+      "enum": ["column", "code", "results"]
+    },
+
+    "Severity": {
+      "type": "string",
+      "enum": ["block", "warn", "pass", "uncertain"]
+    },
+
+    "Evidence": {
+      "type": "object",
+      "required": ["type", "pointer"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["config_file", "script_file", "data_file", "data_dictionary", "research_plan", "stdout", "stderr", "output_table", "log", "cross_lang_repro"]
+        },
+        "pointer": {
+          "type": "string",
+          "description": "File path, line number, JSON path, or sheet!cell — enough to locate the evidence"
+        },
+        "excerpt": { "type": "string" },
+        "value": { "description": "Literal value observed if relevant" }
+      }
+    },
+
+    "Issue": {
+      "type": "object",
+      "required": ["role", "skill", "check_id", "severity", "message", "evidence"],
+      "properties": {
+        "role": { "$ref": "#/definitions/Role" },
+        "skill": {
+          "type": "string",
+          "description": "Which biostats skill this issue applies to (e.g. table1, kaplan-meier)"
+        },
+        "step_id": {
+          "type": "string",
+          "description": "research_plan.pipeline[].id if the issue is tied to a specific pipeline step"
+        },
+        "check_id": {
+          "type": "string",
+          "pattern": "^(COL|CODE|RES)-[0-9]{3}$",
+          "description": "e.g. COL-002, CODE-004, RES-001, RES-014 (cross-language sanity)"
+        },
+        "severity": { "$ref": "#/definitions/Severity" },
+        "message": {
+          "type": "string",
+          "description": "One-sentence issue description (繁中 to match user preference)"
+        },
+        "evidence": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Evidence" },
+          "minItems": 1
+        },
+        "suggestion": {
+          "type": "string",
+          "description": "Concrete remediation (specific values, specific edits)"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "How sure the auditor is; < 0.6 should be severity=uncertain"
+        }
+      }
+    },
+
+    "RoleReport": {
+      "type": "object",
+      "required": ["role", "skill", "status", "issues", "completed_at"],
+      "properties": {
+        "role": { "$ref": "#/definitions/Role" },
+        "skill": { "type": "string" },
+        "step_id": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["pass", "warn", "block", "error", "skipped"]
+        },
+        "issues": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Issue" }
+        },
+        "summary": {
+          "type": "string",
+          "description": "One-paragraph 繁中 summary for user"
+        },
+        "started_at": { "type": "string" },
+        "completed_at": { "type": "string" },
+        "duration_seconds": { "type": "number" }
+      }
+    },
+
+    "GuardianReport": {
+      "type": "object",
+      "required": ["phase", "mode", "role_reports", "aggregated_status", "generated_at"],
+      "properties": {
+        "phase": {
+          "type": "string",
+          "enum": ["pre", "post", "ad-hoc"],
+          "description": "pre = before run_pipeline.py; post = after; ad-hoc = manual /biostats-guardian invocation"
+        },
+        "mode": {
+          "type": "string",
+          "enum": ["off", "quick", "standard", "full"]
+        },
+        "plan_path": {
+          "type": "string",
+          "description": "Absolute path to research_plan.json"
+        },
+        "role_reports": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/RoleReport" }
+        },
+        "aggregated_status": {
+          "type": "string",
+          "enum": ["pass", "warn", "block", "error"],
+          "description": "Worst severity across all role_reports"
+        },
+        "issue_count": {
+          "type": "object",
+          "properties": {
+            "block": { "type": "integer" },
+            "warn":  { "type": "integer" },
+            "uncertain": { "type": "integer" }
+          }
+        },
+        "generated_at": { "type": "string" },
+        "version": { "type": "string" }
+      }
+    }
+  },
+
+  "$ref": "#/definitions/GuardianReport"
+}

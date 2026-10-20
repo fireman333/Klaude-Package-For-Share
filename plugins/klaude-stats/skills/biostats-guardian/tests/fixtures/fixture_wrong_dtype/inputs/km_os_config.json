@@ -1,0 +1,10 @@
+{
+  "skill": "kaplan-meier",
+  "step_id": "km_os",
+  "data_file": "data.xlsx",
+  "time_col": "follow_up_years",
+  "event_col": "death_status",
+  "group_col": "treatment",
+  "reference_level": "control",
+  "output_file": "KM_OS.xlsx"
+}

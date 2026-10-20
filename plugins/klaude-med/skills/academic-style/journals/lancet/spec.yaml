@@ -1,0 +1,77 @@
+journal:
+  name: The Lancet
+  short: lancet
+  publisher: Elsevier
+  spec_version: "2025.01"
+  source_priority: [author_guideline, sample_papers, yuan1z0825]
+  sources:
+    author_guideline: https://www.thelancet.com/lancet/information-for-authors
+    sample_dois:
+      - "10.1016/S0140-6736(23)01230-X"
+      - "10.1016/S0140-6736(24)00512-6"
+    third_party_credit: "github.com/Yuan1z0825/nature-skills (MIT)"
+
+typography:
+  font_stack: [Helvetica, Arial, "Liberation Sans", DejaVu Sans]
+  base_size_pt: 7
+  sizes_pt:
+    title: 8
+    axis_label: 7
+    tick: 6
+    legend: 6
+    panel_label: 8
+  panel_label:
+    style: bold
+    case: upper
+    format: "A"
+
+dimensions:
+  units: mm
+  single_column: {width: 89,  max_height: 247}
+  double_column: {width: 183, max_height: 247}
+  full_width:    {width: 183, max_height: 247}
+  dpi_raster: 300
+  dpi_preview: 150
+
+lines:
+  axis_linewidth: 0.5
+  data_linewidth: 1.0
+  tick_length: 2.0
+  tick_direction: out
+
+palette:
+  ref: palette.json
+
+semantic_mapping:
+  primary_method: lancet_red
+  positive_outcome: lancet_blue
+  control_or_negative: lancet_gray_dark
+  neutral_reference: gray_2
+  highlight: lancet_orange
+
+submission:
+  vector_format: PDF
+  raster_format: TIFF
+  preview_format: PNG
+  svg_fonttype: none
+  embed_fonts: true
+
+caption:
+  template: "Figure {n}: {title}. {body} {panel_descriptions}"
+  title_case: sentence
+  notes: "Use global-health framing where applicable; describe panels, sample sizes, 95% CIs."
+  panel_separator: " "
+  bold_title: false
+  significance_legend_inline: false
+
+ax_style:
+  spines_visible: [bottom, left]
+  grid: false
+  legend_frame: false
+
+table_style:
+  decimal_places: {percent: 1, p_value: 4, hr: 2, ci: 2}
+  p_value_format: "<0·0001"
+  bold_significant: false
+  shading: alternating_rows
+  decimal_separator: middle_dot

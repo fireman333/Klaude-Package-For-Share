@@ -1,0 +1,91 @@
+{
+  "_comment": "Empty CONTENT scaffold for case-discussion-docx. Claude fills sections[].paragraphs after writing the draft in first-person prose. References must use Vancouver format with leading number matching inline [N] usage.",
+
+  "title_main": "<科別> Case Discussion 書面報告",
+  "title_sub": "<one-line case description with key clinical features>",
+  "reporter": "（你的名字）",
+  "report_date": "2026/MM/DD",
+  "rotation": "<科別>實習",
+
+  "cover_page": false,
+  "font_body": "標楷體",
+  "font_ref": "Times New Roman",
+  "citation_style": "vancouver-bracket",
+
+  "sections": [
+    {
+      "heading": "前言",
+      "level": 1,
+      "paragraphs": [
+        "<為什麼選這個 case + 報告結構簡述，2 段為宜>",
+        "<第二段：希望透過這份報告整合的脈絡>"
+      ]
+    },
+    {
+      "heading": "一、Case 簡介",
+      "level": 1,
+      "paragraphs": []
+    },
+    {
+      "heading": "1.1　病人 profile 與 underlying",
+      "level": 2,
+      "paragraphs": ["<病人基本 + underlying + family + medication>"]
+    },
+    {
+      "heading": "1.2　Clinical timeline",
+      "level": 2,
+      "paragraphs": ["<時間軸敘事，從 onset 到 admission，注意 acute 與 chronic 階段>"]
+    },
+    {
+      "heading": "1.3　Admission 時的關鍵 findings",
+      "level": 2,
+      "paragraphs": ["<vital + PE + lab 異常 + imaging summary>"]
+    },
+    {
+      "heading": "二、<臨床評估重點 — 依 case 類型客製>",
+      "level": 1,
+      "paragraphs": ["<grading / staging / DDx / approach 推理，附 inline [N]>"]
+    },
+    {
+      "heading": "三、Imaging / Investigations 的角色",
+      "level": 1,
+      "paragraphs": ["<各 modality 貢獻 + 限制，附 [N]>"]
+    },
+    {
+      "heading": "四、Treatment options 比較",
+      "level": 1,
+      "paragraphs": ["<各選項 evidence + trade-off，附 [N]>"]
+    },
+    {
+      "heading": "五、<關鍵 trial / guideline 適用範圍>",
+      "level": 1,
+      "paragraphs": ["<該 trial 的 scope + 為什麼本 case 適用 / 不適用，附 [N]>"]
+    },
+    {
+      "heading": "六、為什麼選擇 X 治療路徑",
+      "level": 1,
+      "paragraphs": ["<整合前面節次成 stepwise 決策推理>"]
+    },
+    {
+      "heading": "七、Long-term follow-up plan",
+      "level": 1,
+      "paragraphs": ["<follow-up imaging / labs / functional outcome target，附 [N]>"]
+    },
+    {
+      "heading": "八、個人反思",
+      "level": 1,
+      "paragraphs": [
+        "<從這個 case 學到什麼 lesson，避免強塞 citation>",
+        "<感謝 rotation 老師、總醫師、住院醫師、同學>",
+        "<正面收束 — 期許 / 展望>"
+      ]
+    }
+  ],
+
+  "references": [
+    "1. <Author A, Author B. Title. Journal. Year;Vol(Issue):Pages. PMID: 12345. doi: 10.xxxx/yyyy.>",
+    "2. <...>"
+  ],
+
+  "output_path": "書面報告_<slug>_<YYYYMMDD>.docx"
+}

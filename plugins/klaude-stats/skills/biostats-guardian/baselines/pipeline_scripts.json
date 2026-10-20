@@ -1,0 +1,5 @@
+{
+  "placeholder": true,
+  "files": {},
+  "note": "Placeholder. Run: python scripts/script_hashes.py update --note \"first install\" (once, from this skill folder)."
+}

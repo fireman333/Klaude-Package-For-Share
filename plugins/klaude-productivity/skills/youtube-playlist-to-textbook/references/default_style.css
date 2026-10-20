@@ -1,0 +1,184 @@
+/* Print-optimized CSS for 6.824 lecture notes PDF */
+@page {
+    size: A4;
+    margin: 2cm 2cm 2.2cm 2cm;
+    @bottom-center {
+        content: counter(page) " / " counter(pages);
+        font-size: 9pt;
+        color: #888;
+    }
+}
+
+body {
+    font-family: "Heiti TC", "PingFang TC", "Source Han Sans TC", "Noto Sans CJK TC", sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.65;
+    color: #1a1a1a;
+    max-width: 170mm;
+    margin: 0 auto;
+    padding: 0;
+}
+
+h1 {
+    font-size: 22pt;
+    color: #1a3a5c;
+    border-bottom: 2px solid #1a3a5c;
+    padding-bottom: 6pt;
+    margin-top: 32pt;
+    margin-bottom: 16pt;
+    page-break-before: always;
+}
+
+h1:first-of-type {
+    page-break-before: avoid;
+}
+
+h2 {
+    font-size: 16pt;
+    color: #2d5a87;
+    border-bottom: 1px solid #b8cce4;
+    padding-bottom: 3pt;
+    margin-top: 24pt;
+    margin-bottom: 10pt;
+    page-break-after: avoid;
+}
+
+h3 {
+    font-size: 13pt;
+    color: #3e6b9f;
+    margin-top: 16pt;
+    margin-bottom: 8pt;
+    page-break-after: avoid;
+}
+
+h4 {
+    font-size: 11.5pt;
+    color: #4a4a4a;
+    margin-top: 12pt;
+    page-break-after: avoid;
+}
+
+p, li {
+    orphans: 3;
+    widows: 3;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+code {
+    font-family: "Menlo", "Monaco", "Consolas", monospace;
+    font-size: 9.5pt;
+    background: #f0f2f5;
+    padding: 1pt 4pt;
+    border-radius: 3px;
+    color: #c7254e;
+}
+
+pre {
+    background: #f7f7f9;
+    border: 1px solid #e1e4e8;
+    border-radius: 4px;
+    padding: 10pt;
+    font-size: 9pt;
+    line-height: 1.45;
+    overflow-x: auto;
+    page-break-inside: avoid;
+}
+
+pre code {
+    background: transparent;
+    color: #24292e;
+    padding: 0;
+}
+
+blockquote {
+    border-left: 3px solid #b8cce4;
+    margin-left: 0;
+    padding-left: 12pt;
+    color: #555;
+    font-style: italic;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 10pt 0;
+    font-size: 9.5pt;
+    width: 100%;
+    page-break-inside: avoid;
+}
+
+th, td {
+    border: 1px solid #d0d7de;
+    padding: 4pt 8pt;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: #eef3f8;
+    font-weight: 600;
+}
+
+hr {
+    border: none;
+    border-top: 1px dashed #c0c0c0;
+    margin: 18pt 0;
+}
+
+hr.pagebreak {
+    border: none;
+    page-break-after: always;
+    margin: 0;
+    height: 0;
+}
+
+details {
+    background: #fff8e1;
+    border: 1px solid #f0d373;
+    border-radius: 4px;
+    padding: 6pt 10pt;
+    margin: 8pt 0;
+    page-break-inside: avoid;
+}
+
+details[open] {
+    background: #fffbe6;
+}
+
+summary {
+    font-weight: 600;
+    cursor: pointer;
+    color: #8a6d00;
+}
+
+.mermaid {
+    text-align: center;
+    margin: 12pt 0;
+    page-break-inside: avoid;
+}
+
+/* TOC styling from pandoc */
+#TOC {
+    background: #f7f9fc;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 12pt 20pt;
+    margin-bottom: 24pt;
+    page-break-after: always;
+}
+
+#TOC ul {
+    list-style-type: none;
+    padding-left: 14pt;
+}
+
+#TOC > ul {
+    padding-left: 0;
+}
+
+#TOC a {
+    color: #333;
+}

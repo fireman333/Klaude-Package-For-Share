@@ -1,0 +1,54 @@
+# Clinical time tokens that look like dates but MUST NOT be shifted
+# Format: regex pattern (Python 'regex' module syntax)
+# One pattern per line, comments with #
+# These are protected (wrapped in <<NOSHIFT>>...<<NOSHIFT>>) BEFORE date detection
+# --- Drug frequency ---
+(?i)\bq\d+h\b
+(?i)\bq\.?d\b
+(?i)\bb\.?i\.?d\b
+(?i)\bt\.?i\.?d\b
+(?i)\bq\.?i\.?d\b
+(?i)\bqod\b
+(?i)\bqhs\b
+(?i)\bqam\b
+(?i)\bqpm\b
+(?i)\bac\b
+(?i)\bpc\b
+(?i)\bprn\b
+(?i)\bstat\b
+(?i)\bhs\b
+(?i)\bpo\b
+(?i)\biv\b
+(?i)\bim\b
+(?i)\bsc\b
+(?i)\bsq\b
+# --- Post-operative/admission day counters ---
+(?i)\bPOD\s*#?\s*\d+\b
+(?i)\bHD\s*\d+\b
+(?i)\bICU\s*day\s*\d+\b
+住院第\s*\d+\s*天
+手術後第\s*\d+\s*天
+術後第\s*\d+\s*天
+入院第\s*\d+\s*天
+# --- Durations ---
+\d+\s*h\s*\d+\s*min
+\d+\s*hr\s*\d+\s*min
+\d+\s*小時\s*\d+\s*分鐘?
+\d+\s*分鐘
+\d+\s*秒鐘?
+\d+\s*週(?!年)
+\d+\s*月(?!\d)
+# --- Wall-clock time without a date context ---
+# Protected here so that bare HH:MM isn't captured as date
+(?<![-/\d])\d{1,2}:\d{2}(?::\d{2})?(?![-/\d])
+# --- Labs / vital sign units that contain digits ---
+\d+\s*mg/dL
+\d+\s*mmHg
+\d+\s*bpm
+\d+\s*rpm
+\d+\s*mL
+\d+\s*cc
+# --- Age expressions (not PHI when standalone) ---
+\d+\s*y/o
+\d+\s*yo
+\d+\s*歲

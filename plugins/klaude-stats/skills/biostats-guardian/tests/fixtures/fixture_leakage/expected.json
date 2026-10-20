@@ -1,0 +1,13 @@
+{
+  "role": "column",
+  "skill": "univariate-forest",
+  "step_id": "uni_os",
+  "min_status": "block",
+  "must_include": [
+    {
+      "check_id": "COL-004",
+      "severity": "block",
+      "explanation": "lab_day30 is measured at diagnosis_date + 30 days, which is after population.index_date (diagnosis_date). Including it as a baseline covariate is post-index leakage."
+    }
+  ]
+}

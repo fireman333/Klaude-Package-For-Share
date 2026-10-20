@@ -1,0 +1,5 @@
+[2026-04-16 10:00:01] Loaded 142 subjects after population filters
+[2026-04-16 10:00:02] Fitting Cox PH model with covariates: treatment_arm, age
+[2026-04-16 10:00:02] Event count by group: control=66, arm_B=4
+[2026-04-16 10:00:03] Convergence reached after 27 iterations
+[2026-04-16 10:00:03] Wrote output to Multi_OS.csv

@@ -1,0 +1,13 @@
+{
+  "role": "code",
+  "skill": "univariate-forest",
+  "step_id": "uni_os",
+  "min_status": "block",
+  "must_include": [
+    {
+      "check_id": "CODE-001",
+      "severity": "block",
+      "explanation": "Script fits sm.Logit on a time-to-event outcome (config.outcome.type == 'time-to-event' with both time_col and event_col). Should use Cox PH (lifelines.CoxPHFitter) instead."
+    }
+  ]
+}

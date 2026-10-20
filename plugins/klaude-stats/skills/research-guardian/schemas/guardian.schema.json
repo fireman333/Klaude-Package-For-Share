@@ -1,0 +1,213 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+
+    "Severity": {
+      "type": "string",
+      "enum": ["critical", "major", "minor"]
+    },
+
+    "Recommendation": {
+      "type": "string",
+      "enum": ["accept", "weak_accept", "borderline", "weak_reject", "reject"]
+    },
+
+    "Confidence": {
+      "type": "string",
+      "enum": ["high", "medium-high", "medium", "low", "unverified"]
+    },
+
+    "EvidenceItem": {
+      "type": "object",
+      "required": ["type", "pointer", "support_level"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["section", "paragraph", "sentence", "figure", "table", "equation", "reference", "inferred", "external"]
+        },
+        "pointer": { "type": "string" },
+        "excerpt": { "type": "string" },
+        "support_level": {
+          "type": "string",
+          "enum": ["direct", "weak", "inferred"]
+        }
+      }
+    },
+
+    "Issue": {
+      "type": "object",
+      "required": ["id", "gate", "category", "severity", "title", "description", "location", "evidence", "suggested_fix", "confidence"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[A-Z0-9]+-[0-9]+$" },
+        "gate": { "type": "string" },
+        "category": {
+          "type": "string",
+          "enum": ["hypothesis", "literature", "experiment", "result", "overclaim", "logic", "structure", "consistency", "ethics", "formatting", "language", "integrity"]
+        },
+        "severity": { "$ref": "#/definitions/Severity" },
+        "title": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string" },
+        "location": {
+          "type": "object",
+          "required": ["anchor_type", "anchor_id"],
+          "properties": {
+            "anchor_type": { "type": "string" },
+            "anchor_id": { "type": "string" },
+            "section": { "type": "string" },
+            "excerpt_start": { "type": "string" }
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/EvidenceItem" },
+          "minItems": 1
+        },
+        "suggested_fix": { "type": "string" },
+        "fix_example": {
+          "type": "object",
+          "properties": {
+            "before": { "type": "string" },
+            "after": { "type": "string" },
+            "changes": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "logic_layer": { "type": "string" },
+        "detected_by": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Gates/layers that independently detected this issue"
+        },
+        "counter_argument": {
+          "type": "object",
+          "properties": {
+            "reviewer_question": { "type": "string" },
+            "suggested_response": { "type": "string" },
+            "preemptive_fix": { "type": "string" }
+          }
+        }
+      }
+    },
+
+    "GateResult": {
+      "type": "object",
+      "required": ["gate_name", "status", "issues", "started_at", "completed_at"],
+      "properties": {
+        "gate_name": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["pass", "warn", "fail", "skip", "timeout", "error"]
+        },
+        "issues": { "type": "array", "items": { "$ref": "#/definitions/Issue" } },
+        "sub_module_used": { "type": "string" },
+        "logic_layers_run": { "type": "array", "items": { "type": "string" } },
+        "started_at": { "type": "string", "format": "date-time" },
+        "completed_at": { "type": "string", "format": "date-time" },
+        "duration_seconds": { "type": "number" },
+        "token_usage": { "type": "integer" }
+      }
+    },
+
+    "Scorecard": {
+      "type": "object",
+      "properties": {
+        "originality":      { "type": "number", "minimum": 1, "maximum": 5 },
+        "soundness":        { "type": "number", "minimum": 1, "maximum": 5 },
+        "rigor":            { "type": "number", "minimum": 1, "maximum": 5 },
+        "clarity":          { "type": "number", "minimum": 1, "maximum": 5 },
+        "reproducibility":  { "type": "number", "minimum": 1, "maximum": 5 },
+        "significance":     { "type": "number", "minimum": 1, "maximum": 5 },
+        "integrity":        { "type": "number", "minimum": 1, "maximum": 5 },
+        "overall":          { "type": "number", "minimum": 1, "maximum": 5 }
+      }
+    },
+
+    "RedFlag": {
+      "type": "object",
+      "required": ["category", "description", "related_issues"],
+      "properties": {
+        "category": {
+          "type": "string",
+          "enum": ["integrity", "methodology", "reporting"]
+        },
+        "description": { "type": "string" },
+        "related_issues": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "RejectionRisk": {
+      "type": "object",
+      "properties": {
+        "score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "level": { "type": "string", "enum": ["low", "medium", "high", "very_high"] },
+        "top_improvements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "issue_id": { "type": "string" },
+              "risk_reduction": { "type": "number" },
+              "effort": { "type": "string", "enum": ["low", "medium", "high"] },
+              "priority_rank": { "type": "integer" }
+            }
+          }
+        },
+        "estimated_risk_after_fixes": { "type": "number" }
+      }
+    },
+
+    "PipelineCheckpoint": {
+      "type": "object",
+      "required": ["run_id", "paper_id", "status", "started_at", "gates_completed"],
+      "properties": {
+        "run_id": { "type": "string" },
+        "paper_id": { "type": "string" },
+        "mode": { "type": "string", "enum": ["quick", "standard", "full"] },
+        "preset": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["running", "completed", "failed", "interrupted", "resuming"]
+        },
+        "started_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" },
+        "completed_at": { "type": ["string", "null"], "format": "date-time" },
+        "gates_completed": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/definitions/GateResult" }
+        },
+        "gates_pending": { "type": "array", "items": { "type": "string" } },
+        "escalated_from": { "type": ["string", "null"] },
+        "error_log": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "ReviewReport": {
+      "type": "object",
+      "required": ["paper_id", "run_id", "mode", "issues", "scorecard", "recommendation", "confidence"],
+      "properties": {
+        "paper_id": { "type": "string" },
+        "run_id": { "type": "string" },
+        "mode": { "type": "string" },
+        "preset": { "type": "string" },
+        "persona": { "type": "string" },
+        "gate_results": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/definitions/GateResult" }
+        },
+        "issues": { "type": "array", "items": { "$ref": "#/definitions/Issue" } },
+        "cross_section_issues": { "type": "array", "items": { "$ref": "#/definitions/Issue" } },
+        "scorecard": { "$ref": "#/definitions/Scorecard" },
+        "red_flags": { "type": "array", "items": { "$ref": "#/definitions/RedFlag" } },
+        "strengths": { "type": "array", "items": { "type": "string" } },
+        "weaknesses": { "type": "array", "items": { "type": "string" } },
+        "questions_for_authors": { "type": "array", "items": { "type": "string" } },
+        "recommendation": { "$ref": "#/definitions/Recommendation" },
+        "confidence": { "$ref": "#/definitions/Confidence" },
+        "rejection_risk": { "$ref": "#/definitions/RejectionRisk" },
+        "version": { "type": "string" },
+        "total_duration_seconds": { "type": "number" },
+        "total_tokens": { "type": "integer" }
+      }
+    }
+  }
+}

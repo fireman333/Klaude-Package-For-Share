@@ -1,0 +1,14 @@
+{
+  "study_id": "fixture_bad_method",
+  "data_file": "data.xlsx",
+  "population": {"filters": [], "min_n": 100, "index_date": "diagnosis_date"},
+  "grouping": {"column": "treatment", "reference_level": "control"},
+  "covariates": [{"column": "age", "type": "continuous", "adjust": true}],
+  "pipeline": [
+    {"id": "uni_os", "skill": "univariate-forest",
+     "config_file": "uni_os_config.json",
+     "script": "univariate_forest.py",
+     "success_criteria": []}
+  ],
+  "guardian": {"mode": "standard"}
+}

@@ -1,0 +1,25 @@
+{
+  "study_id": "fixture_leakage",
+  "data_file": "data.xlsx",
+  "population": {
+    "filters": [],
+    "min_n": 30,
+    "index_date": "diagnosis_date"
+  },
+  "grouping": {"column": "treatment", "reference_level": "control"},
+  "covariates": [
+    {"column": "age", "type": "continuous", "adjust": true},
+    {"column": "lab_day30", "type": "continuous", "adjust": true,
+     "measured_at": "diagnosis_date + 30 days"}
+  ],
+  "derived_variables": [
+    {"name": "lab_day30",
+     "source_columns": ["lab_value_postop"],
+     "source_event_time": "diagnosis_date + 30 days"}
+  ],
+  "pipeline": [
+    {"id": "uni_os", "skill": "univariate-forest",
+     "config_file": "uni_os_config.json", "success_criteria": []}
+  ],
+  "guardian": {"mode": "standard"}
+}

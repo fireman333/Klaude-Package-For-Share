@@ -1,0 +1,25 @@
+{
+  "role": "results",
+  "skill": "multivariate-interaction",
+  "step_id": "multi_os",
+  "min_status": "block",
+  "must_include": [
+    {
+      "check_id": "RES-001",
+      "severity": "block",
+      "explanation": "treatment_arm_B HR = 1.2e6 is far outside [0.01, 100], and 95% CI spans ~12 orders of magnitude. Combined with only 4 events in arm_B (per log), this is sparse-data collapse, not a real signal."
+    }
+  ],
+  "may_include": [
+    {
+      "check_id": "RES-006",
+      "severity": "warn",
+      "explanation": "Events-per-variable in arm_B is 4 < 10 (covariates: treatment_arm + age = 2 effective predictors). EPV violation."
+    },
+    {
+      "check_id": "RES-004",
+      "severity": "block",
+      "explanation": "success_criteria 'HR <= 100' (severity=blocking) failed: observed HR = 1.2e6."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "study_id": "fixture_wrong_dtype",
+  "data_file": "data.xlsx",
+  "population": {
+    "filters": [],
+    "min_n": 30,
+    "index_date": "diagnosis_date"
+  },
+  "grouping": {
+    "column": "treatment",
+    "reference_level": "control"
+  },
+  "covariates": [
+    {"column": "age", "type": "continuous", "adjust": true}
+  ],
+  "pipeline": [
+    {
+      "id": "km_os",
+      "skill": "kaplan-meier",
+      "config_file": "km_os_config.json",
+      "success_criteria": []
+    }
+  ],
+  "guardian": {"mode": "standard"}
+}

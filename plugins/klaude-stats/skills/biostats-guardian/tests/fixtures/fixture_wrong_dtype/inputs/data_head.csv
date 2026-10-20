@@ -1,0 +1,11 @@
+subject_id,treatment,follow_up_years,death_status,age
+1,control,3.2,0,65
+2,treatment,1.8,1,72
+3,control,5.0,0,58
+4,treatment,2.4,2,68
+5,control,0.5,9,80
+6,treatment,4.1,1,55
+7,control,2.9,0,63
+8,treatment,3.7,2,71
+9,control,1.2,9,67
+10,treatment,4.8,1,60

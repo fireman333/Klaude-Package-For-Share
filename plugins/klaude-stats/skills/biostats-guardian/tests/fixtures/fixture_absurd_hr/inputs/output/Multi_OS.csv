@@ -1,0 +1,3 @@
+term,HR,CI_low,CI_high,p_value,n_events,n_total
+treatment_arm_B,1200000.0,0.0012,1200000000.0,0.42,4,142
+age,1.03,1.01,1.05,0.002,138,142
