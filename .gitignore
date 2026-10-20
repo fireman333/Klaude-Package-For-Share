@@ -8,3 +8,4 @@ config.json
 *.local.json
 _reports/
 _shared_staging/
+cookies.txt

@@ -135,7 +135,7 @@ Offer: `open "<output_dir>"`
 | PyMuPDF missing | `pip3 install pymupdf` |
 | pymupdf4llm missing | `pip3 install pymupdf4llm` (small PDFs only) |
 | marker-pdf missing | `uv tool install marker-pdf --python 3.13`（或 `pip install marker-pdf`），安裝後會提供 `marker_single` 指令 |
-| uv missing | `curl -LsSf https://astral.sh/uv/install.sh \| sh` |
+| uv missing | `brew install uv`（或依 https://docs.astral.sh/uv/ 官方說明安裝） |
 | Chapter conversion fails | Log, continue, report at end |
 | Output file < 5 KB | Warn user to check that chapter |
 | No TOC in PDF | Offer `--all` single-file conversion |

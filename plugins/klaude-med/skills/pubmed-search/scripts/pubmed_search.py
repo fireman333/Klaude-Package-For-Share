@@ -22,9 +22,17 @@ import urllib.error
 import xml.etree.ElementTree as ET
 from datetime import datetime
 
-# Create SSL context — handles macOS Python missing root certificates
-# PubMed is a public read-only API, so unverified context is acceptable
-_ssl_context = ssl._create_unverified_context()
+# Verified SSL by default. If macOS Python lacks root certificates, run
+# "Install Certificates.command" (python.org builds) or pip install certifi.
+# As a last resort set PUBMED_INSECURE_SSL=1 to skip verification.
+if os.environ.get("PUBMED_INSECURE_SSL") == "1":
+    _ssl_context = ssl._create_unverified_context()
+else:
+    try:
+        import certifi
+        _ssl_context = ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        _ssl_context = ssl.create_default_context()
 
 import pandas as pd
 from openpyxl import load_workbook

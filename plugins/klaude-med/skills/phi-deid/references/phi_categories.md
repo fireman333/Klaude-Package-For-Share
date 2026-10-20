@@ -27,7 +27,7 @@
 | **病歷號 / 住院號 / 病理號 / 影像號 / 檢驗單號** | A1234567 / ADM20240315001 / S-24-01234 | `[MRN_NN]` / `[ADM_NN]` / `[PATH_NN]` / `[ACCESSION_NN]` / `[LAB_NN]` | 語境 regex |
 | **床號** | 12A-03 | `[BED_NN]` | 語境 regex（需 "床號"/"Bed" 前綴）|
 | **手機** | 0912-345-678 | `[PHONE_NN]` | regex `09\d{2}[-\s]?\d{3}[-\s]?\d{3}` |
-| **市話** | 02-2312-3456 | `[PHONE_NN]` | regex `0[2-8][-\s]?\d{3,4}[-\s]?\d{4}` |
+| **市話** | 02-1234-5678 | `[PHONE_NN]` | regex `0[2-8][-\s]?\d{3,4}[-\s]?\d{4}` |
 | **Email** | patient@xxx.com | `[EMAIL_NN]` | regex |
 | **LINE ID** | `LINE: wangxm1952` | `[LINEID_NN]` | regex `LINE(?:\sID)?:` |
 | **車牌** | ABC-1234 | `[PLATETW_NN]` | regex（外傷 note 偶見）|

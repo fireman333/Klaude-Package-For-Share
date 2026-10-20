@@ -1,7 +1,7 @@
 ---
 name: auto-git
 description: |
-  Automatically manage git throughout project development — init repos, commit after each logical step, create safety checkpoints before risky changes, and push to remote. Use this skill whenever: starting a new project, writing or editing code, debugging, refactoring, or any multi-step development task. This skill should be active in ALL coding sessions, not just when the user mentions git. Think of it as a background discipline that runs alongside everything else.
+  Automatically manage git throughout project development — init repos, commit after each logical step, create safety checkpoints before risky changes, and push to remote only after asking the user. Use this skill whenever: starting a new project, writing or editing code, debugging, refactoring, or any multi-step development task. This skill should be active in ALL coding sessions, not just when the user mentions git. Think of it as a background discipline that runs alongside everything else.
 ---
 
 # Auto-Git: Automatic Version Control
@@ -110,14 +110,14 @@ checkpoint: 第一題正常運作，準備 debug 第二題問題
 
 This way, if the change breaks things, the user can `git diff` to see exactly what changed, or `git checkout` to go back.
 
-## Auto Push
+## Push (ask first)
 
-After every commit, push to remote if one is configured:
+Never push automatically. After a batch of commits, if a remote is configured, ask the user once: "要推到遠端嗎？" and only then run:
 ```
 git push origin <current-branch>
 ```
 
-If push fails (no remote, auth issue), just mention it briefly and move on — don't block the workflow.
+Pushing may publish code or trigger a deploy, so always wait for an explicit yes. If push fails (no remote, auth issue), mention it briefly and move on.
 
 ## Workflow Example
 
@@ -129,14 +129,14 @@ User: 幫我加一個匯出 CSV 的功能
 [You check git status — clean]
 [You write the feature across 2-3 files]
 [You commit]:  feat: 加入 CSV 匯出功能
-[You push]
+[You ask: 要推到遠端嗎？ → push only if yes]
 
 User: 匯出的格式不對，幫我修
 
 [You commit checkpoint]:  checkpoint: CSV 匯出功能完成，準備修復格式
 [You fix the format]
 [You commit]:  fix: 修正 CSV 匯出的欄位格式
-[You push]
+[You ask: 要推到遠端嗎？ → push only if yes]
 
 User: 試試看把匯出改成用 streaming 的方式
 

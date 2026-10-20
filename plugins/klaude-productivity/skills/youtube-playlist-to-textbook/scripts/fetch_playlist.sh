@@ -3,7 +3,7 @@
 #
 # Usage:
 #   bash fetch_playlist.sh <PLAYLIST_URL>
-#   bash fetch_playlist.sh PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB  # playlist ID also works
+#   bash fetch_playlist.sh PLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  # playlist ID also works
 #
 # Output:
 #   lectures-raw/playlist.json          (metadata: index, video_id, title, duration, url)
