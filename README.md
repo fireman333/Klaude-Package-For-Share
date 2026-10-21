@@ -74,11 +74,12 @@
 | pageindex | 長 PDF（guideline / 課本）精準問答，附頁碼 |
 | excel-to-csv | Excel 轉 CSV |
 
-### `klaude-productivity`：生產力（9 個 skill＋4 個輕量 agent）
+### `klaude-productivity`：生產力（10 個 skill＋4 個輕量 agent）
 
 | Skill | 做什麼 |
 |---|---|
 | grill-me | 做決定 / 開新計畫前，讓 Claude 用問題逼你想清楚 |
+| session-handoff | session 收尾說「handoff」寫一份 ≤3 KB 的現況，下次說「讀一下 handoff」只讀它；舊版自動存檔，不會越寫越長 |
 | no-wheels | 寫程式前先查有沒有現成的輪子 |
 | auto-git | 寫程式時自動 commit、建檢查點 |
 | license-decision-tree | 幫開源專案選授權 |

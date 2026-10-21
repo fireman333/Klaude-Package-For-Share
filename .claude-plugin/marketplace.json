@@ -29,8 +29,8 @@
     {
       "name": "klaude-productivity",
       "source": "./plugins/klaude-productivity",
-      "description": "生產力：拷問式釐清決策、查有沒有現成輪子、自動 git、授權選擇、建立你自己的寫作風格",
-      "version": "1.0.0",
+      "description": "生產力：拷問式釐清決策、session 交接、查有沒有現成輪子、自動 git、授權選擇、建立你自己的寫作風格",
+      "version": "1.1.0",
       "category": "productivity"
     }
   ]
